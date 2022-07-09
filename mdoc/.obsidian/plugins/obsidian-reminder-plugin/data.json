@@ -1,0 +1,94 @@
+{
+  "scanned": true,
+  "reminders": {
+    "000.inbox/inbox.md.md": [
+      {
+        "title": "#task 探索obsidian ⏫ 🛫 2022-01-15",
+        "time": "2022-01-30",
+        "rowNumber": 5
+      },
+      {
+        "title": "#task 探索obsidian dataview 🔼",
+        "time": "2022-01-30",
+        "rowNumber": 10
+      },
+      {
+        "title": "#task #health 阅读大脑的故事 ⏫",
+        "time": "2022-01-30",
+        "rowNumber": 19
+      }
+    ],
+    "zzz.template/habbit recurring.md": [
+      {
+        "title": "#task 开启专注计时器 ⏫",
+        "time": "2022-01-20",
+        "rowNumber": 2
+      },
+      {
+        "title": "#task 计划每天读书，读mannual， 做设计的时间 ⏫",
+        "time": "2022-01-20",
+        "rowNumber": 3
+      },
+      {
+        "title": "#task 拉力训练 ⏫",
+        "time": "2100-01-01",
+        "rowNumber": 6
+      },
+      {
+        "title": "#task 练腿 🔼",
+        "time": "2100-01-01",
+        "rowNumber": 7
+      },
+      {
+        "title": "#task 羽毛球锻炼 🔼",
+        "time": "2100-01-03",
+        "rowNumber": 8
+      },
+      {
+        "title": "#task 核心恢复训练 🔼",
+        "time": "2100-01-04",
+        "rowNumber": 4
+      },
+      {
+        "title": "#task 推力训练 🔼",
+        "time": "2100-01-05",
+        "rowNumber": 5
+      }
+    ],
+    "000.plan/week 2022.1.17.md": [
+      {
+        "title": "#task 运维服务端需要做一个merge ⏫ ⏳ 2022-01-18",
+        "time": "2022-01-19",
+        "rowNumber": 26
+      },
+      {
+        "title": "#task  双因素认证（运营运维）脚本，代码开发 ⏫ 🛫 2022-01-18 ⏳ 2022-01-19",
+        "time": "2022-01-23",
+        "rowNumber": 14
+      },
+      {
+        "title": "#task 标准版bug fix ⏫",
+        "time": "2022-01-23",
+        "rowNumber": 15
+      }
+    ]
+  },
+  "debug": false,
+  "settings": {
+    "reminderTime": "09:00",
+    "laters": "In 30 minutes\nIn 1 hour\nIn 3 hours\nTomorrow\nNext week",
+    "useSystemNotification": true,
+    "autoCompleteTrigger": "(@",
+    "primaryReminderFormat": "ReminderPluginReminderFormat",
+    "enableReminderPluginReminderFormat": true,
+    "dateFormat": "YYYY-MM-DD",
+    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+    "strictDateFormat": false,
+    "linkDatesToDailyNotes": true,
+    "enableTasksPluginReminderFormat": true,
+    "useCustomEmojiForTasksPlugin": false,
+    "enableKanbanPluginReminderFormat": false,
+    "editDetectionSec": 10,
+    "reminderCheckIntervalSec": 5
+  }
+}

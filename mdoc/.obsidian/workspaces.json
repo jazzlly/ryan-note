@@ -1,0 +1,133 @@
+{
+  "workspaces": {
+    "week": {
+      "main": {
+        "id": "51c208f120333019",
+        "type": "split",
+        "children": [
+          {
+            "id": "e829b17cf17a3888",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "000.plan/plan.week 1.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "f355cf6724d0415f",
+        "type": "split",
+        "children": [
+          {
+            "id": "0dbbb5e3e822b7b2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "bdd40459d4d41d15",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "6d1562e6e46429f3",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "tag:#snippet",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "3ad52738da1dbf3b",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "5dabb4d81f47b3bd",
+        "type": "split",
+        "children": [
+          {
+            "id": "55487db5e969b751",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "89eb418bfe067b31",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "000.plan/plan.week 1.md",
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "febc5ef82320efa5",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "8a079766c79130f2",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "a513c056a3c4bd2f",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "000.plan/plan.week 1.md"
+                  }
+                }
+              }
+            ],
+            "currentTab": 3
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "active": "e829b17cf17a3888"
+    }
+  },
+  "active": "week"
+}

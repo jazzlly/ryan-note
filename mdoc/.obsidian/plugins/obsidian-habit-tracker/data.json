@@ -1,0 +1,13 @@
+{
+  "startOfWeek": "0",
+  "monthFormat": "YYYY-MM",
+  "displayHead": false,
+  "enableHTML": false,
+  "Sunday": "SUN",
+  "Monday": "MON",
+  "Tuesday": "TUE",
+  "Wednesday": "WED",
+  "Thursday": "THU",
+  "Friday": "FRI",
+  "Saturday": "SAT"
+}

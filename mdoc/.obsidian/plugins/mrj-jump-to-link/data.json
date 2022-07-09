@@ -1,0 +1,5 @@
+{
+  "mode": "popovers",
+  "letters": "sadfjklewcmpgh",
+  "jumpToAnywhereRegex": "\\b\\w{2,}\\b"
+}

@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "51c208f120333019",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff798517d02c1a04",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "000.task/联通数据库文档任务 cu255 database doc task.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f355cf6724d0415f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0dbbb5e3e822b7b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bdd40459d4d41d15",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6d1562e6e46429f3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "mysql",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3ad52738da1dbf3b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 336
+  },
+  "right": {
+    "id": "5dabb4d81f47b3bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "55487db5e969b751",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89eb418bfe067b31",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "000.task/联通数据库文档任务 cu255 database doc task.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "febc5ef82320efa5",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "8a079766c79130f2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a513c056a3c4bd2f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "000.task/联通数据库文档任务 cu255 database doc task.md"
+              }
+            }
+          },
+          {
+            "id": "b2ce533f6b9ea716",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "9c9f5e6a0c6ef1df",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "ff798517d02c1a04",
+  "lastOpenFiles": [
+    "000.task/联通数据库文档任务 cu255 database doc task.md",
+    "snippet/snippect.docker 2.md",
+    "snippet/snippet.bash.md",
+    "snippet/sql.snippet.md",
+    "snippet/elasticsearch.snippet.md",
+    "000.inbox/pekall info.md",
+    "lll.lang/go/go cmd line.md",
+    "cmc directus flume docker.md",
+    "000.inbox/pekall 内部服务器.md",
+    "snippet/snippet.cert.md"
+  ]
+}

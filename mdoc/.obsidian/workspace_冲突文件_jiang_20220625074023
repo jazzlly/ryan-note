@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "51c208f120333019",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff798517d02c1a04",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "snippet/snippet.cert.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f355cf6724d0415f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0dbbb5e3e822b7b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bdd40459d4d41d15",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6d1562e6e46429f3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3ad52738da1dbf3b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 336
+  },
+  "right": {
+    "id": "5dabb4d81f47b3bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "55487db5e969b751",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89eb418bfe067b31",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "snippet/snippet.cert.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "febc5ef82320efa5",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "8a079766c79130f2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a513c056a3c4bd2f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "snippet/snippet.cert.md"
+              }
+            }
+          },
+          {
+            "id": "b2ce533f6b9ea716",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "ae6f11fac5039c6f",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ff798517d02c1a04",
+  "lastOpenFiles": [
+    "snippet/snippet.cert.md",
+    "cmc directus flume docker.md",
+    "lll.lang/go/go cmd line.md",
+    "000.plan/week 2022.05.08 current.md",
+    "000.inbox/go.plan.md",
+    "snippet/snippect.docker 2.md",
+    "000.plan/habits/2021-12-27.md",
+    "010.productivity/001.markdown/mermaid_demo.md",
+    "xxx.tech/vmware/one access.md",
+    "000.plan/week 2022.04.18.current.md"
+  ]
+}
