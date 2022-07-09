@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "000.task/联通数据库文档任务 cu255 database doc task.md",
+            "file": "issue/issue.https.cert.md",
             "mode": "source",
             "source": true
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "000.task/联通数据库文档任务 cu255 database doc task.md",
+                "file": "issue/issue.https.cert.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "000.task/联通数据库文档任务 cu255 database doc task.md"
+                "file": "issue/issue.https.cert.md"
               }
             }
           },
@@ -138,19 +138,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "active": "ff798517d02c1a04",
   "lastOpenFiles": [
+    "issue/issue.https.cert.md",
+    "010.productivity/001.markdown/001.markdown_basic.md",
+    "002.health/2022.04.16. fat.md",
+    "002.health/2021.12.24.sleep.md",
+    "002.health/2021.12.19.diabetes.md",
+    "000.task/铁路公安机构人员同步流程.png",
+    "000.task/铁路公安机构人员同步接口文档v1.1.md",
+    "000.task/运维功能合并计划.png",
     "000.task/联通数据库文档任务 cu255 database doc task.md",
-    "snippet/snippect.docker 2.md",
-    "snippet/snippet.bash.md",
-    "snippet/sql.snippet.md",
-    "snippet/elasticsearch.snippet.md",
-    "000.inbox/pekall info.md",
-    "lll.lang/go/go cmd line.md",
-    "cmc directus flume docker.md",
-    "000.inbox/pekall 内部服务器.md",
-    "snippet/snippet.cert.md"
+    "000.task/process.new.service.png"
   ]
 }
