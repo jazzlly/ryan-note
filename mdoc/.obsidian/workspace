@@ -6,14 +6,28 @@
       {
         "id": "ff798517d02c1a04",
         "type": "leaf",
+        "dimension": 78.35365853658537,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "issue/issue.https.cert.md",
+            "file": "lang.bash.001.md",
             "mode": "source",
             "source": true
           }
-        }
+        },
+        "group": "a3b5e555e778d9ca"
+      },
+      {
+        "id": "43051d15563a285b",
+        "type": "leaf",
+        "dimension": 21.646341463414632,
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "lang.bash.001.md"
+          }
+        },
+        "group": "a3b5e555e778d9ca"
       }
     ],
     "direction": "vertical"
@@ -61,7 +75,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 336
+    "width": 291.0129165649414
   },
   "right": {
     "id": "5dabb4d81f47b3bd",
@@ -77,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "issue/issue.https.cert.md",
+                "file": "lang.bash.001.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "issue/issue.https.cert.md"
+                "file": "lang.bash.001.md"
               }
             }
           },
@@ -143,15 +157,15 @@
   },
   "active": "ff798517d02c1a04",
   "lastOpenFiles": [
-    "issue/issue.https.cert.md",
+    "lang.bash.001.md",
+    "002.health/2022.01.09 badminton.md",
+    "Game of power.md",
+    "010.productivity/001.markdown/mermaid_demo.md",
+    "010.productivity/001.markdown/test.png",
     "010.productivity/001.markdown/001.markdown_basic.md",
-    "002.health/2022.04.16. fat.md",
-    "002.health/2021.12.24.sleep.md",
-    "002.health/2021.12.19.diabetes.md",
-    "000.task/铁路公安机构人员同步流程.png",
-    "000.task/铁路公安机构人员同步接口文档v1.1.md",
-    "000.task/运维功能合并计划.png",
-    "000.task/联通数据库文档任务 cu255 database doc task.md",
-    "000.task/process.new.service.png"
+    "snippet/git.snippet.md",
+    "lll.lang/git.concept.md",
+    "AES encryption.md",
+    "issue/issue.https.cert.md"
   ]
 }

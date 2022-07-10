@@ -1,6 +1,5 @@
 # Mermaid 学习
 
-
 ## 流程图范例
 ```mermaid
 graph TD

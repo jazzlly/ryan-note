@@ -18,7 +18,8 @@ openssl x509 -in <(openssl s_client -connect 192.168.9.99:4432 -prexit 2>/dev/nu
 # 将证书导入到java的信任链中
 keytool -importcert -file ~/server.crt -alias myserver -keystore 
  /usr/java/jdk/jre/lib/security/cacerts -storepass changeit
-
+ 
 ```
+
 
 
