@@ -82,6 +82,9 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 
 # sed
 ```
+# 匹配规则
+longest leftmost
+
 # 创建./mdoc目录的备份目录
 find ./mdoc -type d -print|sed 's;/mdoc;/mdoc.bak;'|sed 's/^/mkdir /'|bash -x
 
@@ -92,5 +95,12 @@ sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
 
 工作模式
 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印到标准输出。再回到开头将下一行读入到模式空间
+
+# cut
+```
+cut -d : -f 1,5 /etc/password # 等于下面
+awk -F : '{print $1, $2, $3, $4, $5}' /etc/password
+
+```
 
 	
