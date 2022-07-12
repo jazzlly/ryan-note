@@ -1,2 +1,3 @@
-fuu
-baa
+fuu:foo:fuo
+baa:bar
+zar:zaa
