@@ -1,6 +1,6 @@
 ### gramma
 
-```
+```sh
 awk 'program' [file ...]
 	program:
 		pattern {action}
@@ -19,7 +19,11 @@ awk读入一行，并将其分割为多个字段。并将字段数保存到变�
 - $0: 整条记录, $1, $2, 第n列
 
 ### exmaple
-```
+```sh
+
+# 过滤掉注释行
+awk '!/^#/ {print $1, $5}' /etc/passwd
+
 # 打印第一列和最后一列, 列数， 行数
 awk -F: '{print $1, $NF, NF, NR, FS}' foo.txt
 
@@ -31,12 +35,23 @@ awk 'NF > 2' foo.txt
 ```
 
 ### delimiter
-```
+```sh
 # 默认使用空格作为分隔符。通过-v和变量OFS设置输出分隔符
 awk -F: -v 'OFS=|' '{print $1, $NF, OFS}' foo.txt
 ```
 
 ### printf
-```
+```sh
 grep -v '^#' /etc/passwd| awk -F: '{printf "User %s is really %s\n", $1, $5}'
+```
+
+### begin and end
+```sh
+BEGIN { start code }
+pattern1 { action1 }
+pattern2 { action2 }
+END { clean code}
+
+awk 'BEGIN {FS=":"; OFS=";"} {print $1, $5}' /etc/passwd
+
 ```
