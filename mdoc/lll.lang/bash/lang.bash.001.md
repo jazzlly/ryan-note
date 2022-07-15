@@ -1,4 +1,11 @@
-### intro
+### variable
+```sh
+$$ 当前进程号
+
+$? 命令结果
+
+```
+
 
  ### option vs argument
  

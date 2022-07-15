@@ -1,0 +1,137 @@
+{
+  "main": {
+    "id": "e6ad7a62cb461f47",
+    "type": "split",
+    "children": [
+      {
+        "id": "aeb2b4feaafc74b9",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "000.inbox/pekall 内部服务器.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "051acd2c5365db79",
+    "type": "split",
+    "children": [
+      {
+        "id": "d9bfb100a1cf15e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e64861751fbae6d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "9da1ed0ebf6b2141",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "65632c35740354a9",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6d54ff7ec5b86261",
+    "type": "split",
+    "children": [
+      {
+        "id": "a652cda2c23d53a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80f287bb5f055241",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "542ec2efed37e448",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "000.inbox/pekall 内部服务器.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ac7564741969068d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "adaee5ca2eea675d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "000.inbox/pekall 内部服务器.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "aeb2b4feaafc74b9",
+  "lastOpenFiles": [
+    "000.inbox/pekall info.md",
+    "lll.lang/bash/lang.bash.good.practice.md",
+    "lll.lang/bash/lang.bash.002.md",
+    "lll.lang/bash/lang.bash.001.md",
+    "000.inbox/pekall 内部服务器.md",
+    "000.task/铁路公安机构人员同步接口文档v1.1.md"
+  ]
+}

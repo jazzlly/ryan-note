@@ -30,3 +30,11 @@ grep -v '^#' /etc/passwd|sort -n -t : -k 3nr,3
 ### 设置行宽为100个字符
 cat /usr/share/dict/words|fmt -w 100
 ```
+
+
+### strings
+```sh
+# 查看二进制文件的文本信息
+
+strings kaf-logs/kafka-logs/police_sync_org-0/00000000000000000000.log
+```
