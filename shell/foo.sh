@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 # set -ex
+i=5
+cat<<'E'OF
+This is the value of i: $i
+EOF
+
+exit
 
 sudo du -s * 2>&1|grep -v 'Operation not permitted'|sort -nr|sed 5q|
 while read amount name

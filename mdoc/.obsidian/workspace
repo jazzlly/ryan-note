@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mysql",
+                "query": "MYSQL_PASSWORD",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -132,14 +132,6 @@
             }
           },
           {
-            "id": "b2ce533f6b9ea716",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
             "id": "9c9f5e6a0c6ef1df",
             "type": "leaf",
             "state": {
@@ -148,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -158,14 +150,14 @@
   "active": "ff798517d02c1a04",
   "lastOpenFiles": [
     "lll.lang/bash/lang.bash.001.md",
-    "lll.lang/bash/lang.bash.awk.md",
-    "lll.lang/bash/lang.bash.variables.md",
-    "lll.lang/bash/lang.bash.good.practice.md",
-    "lll.lang/bash/lang.bash.002.md",
-    "002.health/2022.01.09 badminton.md",
-    "Game of power.md",
-    "010.productivity/001.markdown/mermaid_demo.md",
-    "010.productivity/001.markdown/test.png",
-    "010.productivity/001.markdown/001.markdown_basic.md"
+    "snippet/bash/snippet.curl.md",
+    "snippet/vscode.snippet.md",
+    "snippet/vim.snippet.md",
+    "snippet/bash/snippet.linux.network.md",
+    "snippet/bash/snippet.linux.md",
+    "snippet/snippet.kernel theory.md",
+    "snippet/snippet.flume.md",
+    "snippet/bash/snippet.cert.md",
+    "snippet/snippet rubiks cube魔方.md"
   ]
 }

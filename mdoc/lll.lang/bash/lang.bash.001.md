@@ -355,5 +355,25 @@ EOF
 	done
 
 ```
+
+### here document
+```sh
+
+# 将EOF引用后，就不会替换here document中的变量
+i=5
+cat<<'E'OF
+This is the value of i: $i
+EOF
+
+```
+
+### file descriptor
+```sh
+
+make 1>result 2>err
+
+```
+
+
 ### good practice
 [[lang.bash.good.practice]]
