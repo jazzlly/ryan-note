@@ -1,33 +1,47 @@
 {
   "main": {
-    "id": "e6ad7a62cb461f47",
+    "id": "51c208f120333019",
     "type": "split",
     "children": [
       {
-        "id": "aeb2b4feaafc74b9",
+        "id": "ff798517d02c1a04",
         "type": "leaf",
+        "dimension": 79.69543147208121,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "000.inbox/pekall 内部服务器.md",
+            "file": "lll.lang/bash/lang.bash.001.md",
             "mode": "source",
             "source": true
           }
-        }
+        },
+        "group": "a3b5e555e778d9ca"
+      },
+      {
+        "id": "43051d15563a285b",
+        "type": "leaf",
+        "dimension": 20.304568527918782,
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "lll.lang/bash/lang.bash.001.md"
+          }
+        },
+        "group": "a3b5e555e778d9ca"
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "051acd2c5365db79",
+    "id": "f355cf6724d0415f",
     "type": "split",
     "children": [
       {
-        "id": "d9bfb100a1cf15e0",
+        "id": "0dbbb5e3e822b7b2",
         "type": "tabs",
         "children": [
           {
-            "id": "8e64861751fbae6d",
+            "id": "bdd40459d4d41d15",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,59 +49,50 @@
             }
           },
           {
-            "id": "9da1ed0ebf6b2141",
+            "id": "6d1562e6e46429f3",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
-                "matchingCase": false,
+                "query": "mysql",
+                "matchingCase": true,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           },
           {
-            "id": "65632c35740354a9",
+            "id": "3ad52738da1dbf3b",
             "type": "leaf",
             "state": {
               "type": "starred",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 291.0129165649414
   },
   "right": {
-    "id": "6d54ff7ec5b86261",
+    "id": "5dabb4d81f47b3bd",
     "type": "split",
     "children": [
       {
-        "id": "a652cda2c23d53a7",
+        "id": "55487db5e969b751",
         "type": "tabs",
         "children": [
           {
-            "id": "80f287bb5f055241",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "542ec2efed37e448",
+            "id": "89eb418bfe067b31",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "000.inbox/pekall 内部服务器.md",
-                "collapseAll": false,
+                "file": "lll.lang/bash/lang.bash.001.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -98,7 +103,15 @@
             }
           },
           {
-            "id": "ac7564741969068d",
+            "id": "febc5ef82320efa5",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "8a079766c79130f2",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -109,29 +122,50 @@
             }
           },
           {
-            "id": "adaee5ca2eea675d",
+            "id": "a513c056a3c4bd2f",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "000.inbox/pekall 内部服务器.md"
+                "file": "lll.lang/bash/lang.bash.001.md"
               }
             }
+          },
+          {
+            "id": "b2ce533f6b9ea716",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "9c9f5e6a0c6ef1df",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "aeb2b4feaafc74b9",
+  "active": "ff798517d02c1a04",
   "lastOpenFiles": [
-    "000.inbox/pekall info.md",
+    "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.awk.md",
+    "lll.lang/bash/lang.bash.variables.md",
     "lll.lang/bash/lang.bash.good.practice.md",
     "lll.lang/bash/lang.bash.002.md",
-    "lll.lang/bash/lang.bash.001.md",
-    "000.inbox/pekall 内部服务器.md",
-    "000.task/铁路公安机构人员同步接口文档v1.1.md"
+    "002.health/2022.01.09 badminton.md",
+    "Game of power.md",
+    "010.productivity/001.markdown/mermaid_demo.md",
+    "010.productivity/001.markdown/test.png",
+    "010.productivity/001.markdown/001.markdown_basic.md"
   ]
 }

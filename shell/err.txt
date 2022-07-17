@@ -1,0 +1,13 @@
++ grep -q xxx ./1foo.bar.txt
+grep: ./1foo.bar.txt: No such file or directory
++ echo xxx not 'found!'
++ echo prog name is: ./foo.sh
++ echo ehxB
++ old=' 	
+'
++ IFS=,
++ echo ''
++ echo
++ :
++ IFS=' 	
+'

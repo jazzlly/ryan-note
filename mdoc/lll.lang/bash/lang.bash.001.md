@@ -1,13 +1,8 @@
-### variable
-```sh
-$$ 当前进程号
 
-$? 命令结果
+### variable 
+[[lang.bash.variables]]
 
-```
-
-
- ### option vs argument
+### option vs argument
  
 ```shell
 -o 是option。 foo, foo.c是参数
@@ -86,8 +81,11 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 
 ```
 
+### awk
 
-# sed
+[[lang.bash.awk]]
+
+###  sed
 ```
 # 匹配规则
 longest leftmost
@@ -103,10 +101,259 @@ sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
 工作模式
 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印到标准输出。再回到开头将下一行读入到模式空间
 
-# cut
+###  cut
 ```
 cut -d : -f 1,5 /etc/password # 等于下面
 awk -F : '{print $1, $2, $3, $4, $5}' /etc/password
 
 ```
 
+### sort
+```sh
+sort -u -n -r
+
+# 对使用:分隔的第三列进行数字排序
+cat /etc/passwd|sort -n -t : -k 3
+
+# 排序字段可以通过[b,e]方式指定
+cat /etc/passwd|sort -n -t : -k 3,3
+
+sort -n -t : -k 3,3 /etc/passwd
+
+# 对多个字段排序
+sort -t : -k 3n -k 4n /etc/passwd
+
+# 对第三列使用数字逆序排序
+grep -v '^#' /etc/passwd|sort -n -t : -k 3nr,3
+
+```
+
+### uniq
+```sh
+-c # count
+-d # 仅显示重复记录
+-u # 显示未重复的记录
+```
+
+### fmt
+```sh
+### 设置行宽为100个字符
+cat /usr/share/dict/words|fmt -w 100
+```
+
+
+### strings
+```sh
+# 查看二进制文件的文本信息
+
+strings kaf-logs/kafka-logs/police_sync_org-0/00000000000000000000.log
+```
+
+
+### env
+```sh
+# 打印当前环境变量
+env
+
+# 使用var环境变量调用command, 忽略其他继承的环境变量
+env -i var=value command arguments
+
+# unset var
+env -u var
+
+```
+
+### 算术运算
+```sh
+$((1+2))
+
+i=5
+echo $((i++)) $i  # 5 6
+echo $((++i)) $i  # 7 7
+
+echo $((i+=2)) $i # 9 9
+
+```
+
+
+### exit
+```sh
+# 正常退出 0
+% ls 
+% echo $? # 0
+
+% ls haha
+ls: haha: No such file or directory
+% echo $? # 1
+
+# 在脚本中退出, 使用最后一条命令的退出状态
+exit $?
+
+```
+
+### if
+```sh
+
+# if里面的命令执行结果不会影响set -e, 不论foo.bar.txt不存在
+# 或是xxx不在文件中，都不会退出脚本执行
+# 如果文件不存在，会在2有输出
+if grep -q xxx ./foo.bar.txt ;then
+  echo xxx found!
+else
+  echo xxx not found!
+fi
+
+if ! grep -q xxx ./foo.bar.txt ;then
+  :  # do nothing
+else
+  echo xxx found!
+fi
+
+逻辑操作 &&, ||
+
+some_command && {
+	command1
+	command2
+	command3
+}
+
+if some_command 
+then 
+	command1
+	command2
+	command3
+fi
+```
+
+### test
+```sh
+if test "$s1" = "$s2"; then
+fi
+
+# 同义语法
+if [ "$s1" = "$s2" ];then
+fi
+
+逻辑判断使用 -a -o 
+if [ -f 'file1.txt' -a -f 'file2.txt'] # 计算两个条件
+if [ -f 'file1.txt' ] && [ -f 'file2.txt'] # 如果第一个条件为false, 不会执行第二个条件语句
+
+# 推荐写法
+if [ -f 'f1' ] && ! [ -w 'f1' ] # 文件存在，且不可写
+
+```
+
+### case
+```sh
+
+case $1 in
+foo)
+  echo foo
+  ;;
+bar | baa)
+  echo ba*
+  ;;
+*)
+  echo xixi
+  ;;
+esac
+
+```
+
+### while
+```sh
+
+# 初始化变量
+file= verbose= quiet=
+
+while [ $# -gt 0 ]
+do
+  case $1 in
+  -v) verbose=true
+    ;;
+  -q) quiet=true
+    ;;
+  -f) file=$2
+    shift
+    ;;
+  --) shift # --结束选项
+    break
+    ;;
+  -*) echo $0: $1 error >&2
+    ;;
+  *) break
+    ;;
+  esac
+
+  shift
+done
+
+# 选项最开头的: 表示错误处理的方式
+# 1 将选项变成问号，
+# 2 将错误的选项放到$OPTARG中
+while getopts :f:vq opt
+do
+  case $opt in
+  v) verbose=true
+    ;;
+  q) quiet=true
+    ;;
+  f) file=$OPTARG
+    ;;
+  ?) echo $0: error param: $OPTARG
+  exit 1
+  ;;
+  esac
+done
+shift $((OPTIND-1)) # 删除选项，留下参数
+
+```
+
+### function
+```sh
+
+# return和exit的行为一直
+equal() {
+  if [ "$1" = "$2" ];then
+    return 0
+  else
+    return 1
+  fi
+}
+
+if equal 1 2 ;then
+  echo haha
+else
+  echo xixi
+fi
+```
+
+### read
+```sh
+
+# 从文件输入
+while IFS=: read user pass uid gid fullname home shell
+do
+    echo user $user has home $home
+done < /etc/passwd
+
+# 从管道输入
+grep -v '^#' /etc/passwd |
+while IFS=: read user pass uid gid fullname home shell
+do
+    echo user $user has home $home
+done
+
+sudo du -s * 2>&1|grep -v 'Operation not permitted'|sort -nr|sed 5q|
+	while read amount name;
+	do 
+		echo << EOF
+		haha
+		xixi
+		$amount, $name
+EOF
+	done
+
+```
+### good practice
+[[lang.bash.good.practice]]
