@@ -47,7 +47,12 @@ info="$fullname haha!"
 ### printf
 ```bash
 printf format-string [arguments ...]
-printf 'hello world %d %s hahaha\n' 123 foo
+% printf 'hello world %d %s hahaha\n' 123 foo
+
+# 宽度控制
+flags width.precision format-specifier
+% printf '|%20s|\n' hello  # hello在右边
+% printf '|%-20s|\n' hello # hello在左边
 ```
 
 ### io
@@ -328,7 +333,7 @@ else
 fi
 ```
 
-### read
+### read, io redirection, pipe
 ```sh
 
 # 从文件输入
@@ -354,6 +359,11 @@ sudo du -s * 2>&1|grep -v 'Operation not permitted'|sort -nr|sed 5q|
 EOF
 	done
 
+# 将for的结果输出到less
+for f in $(cd olddir; echo *.c)
+do
+	diff olddir/$f $f
+done | less
 ```
 
 ### here document
@@ -372,8 +382,89 @@ EOF
 
 make 1>result 2>err
 
+# &1表示1的地址, 指向result文件
+# 1->result
+# 2->1->result
+make >result 2>&1
+
+# &1标识1的地址，还是终端
+# 2->1->terminaln
+# 1->result
+make 2>&1 >result
+
+# 2->1->pipe
+make 2>&1 | ...
+
 ```
 
+### exec
+```sh
+
+exec 2>/tmp/$$.log
+
+
+
+```
+
+
+### terminal
+```sh
+
+# 重定向标准错误, 在osx有效，linux中无效
+% exec 2>/tmp/$$.err
+% ls file_not_exist  # 错误信息会输出到/tmp/$$.err中
+
+% ps
+PID TTY           TIME CMD
+690 ttys001    0:00.14 -zsh
+
+# 将标准错误重置
+% exec 2>/dev/ttys001
+% ls file_not_exist
+
+```
+
+
+### expansion,  tilde wildcard globbing 
+```sh
+% vim ~/.profile
+% cd ~emmjava  # 进入emmjava的home目录
+
+% read user
+% cd ~${user}  # 进入user的家目录
+
+? 单个字符
+[a-z] 小写字母
+[!a-z] 非小写字母
+
+```
+
+```command substitution
+# 反引号， 重音符号
+$(command)
+```
+
+### eval ; command exec sequence
+```sh
+执行顺序
+- 检查是否是复合语句，如果是，展开命令
+- 别名替换
+- 波浪号替换
+- 变量替换
+- 命令替换
+- 算术表达式替换
+- 从变量，命令，算术替换中获取结果，使用IFS进行分隔
+- 通配符展开，?*[] 文件名生成
+- 使用第一个单词作为第一个命令，查找path中第一个文件
+- 完成IO重定向，执行命令
+
+eval可将脚本再按照循序执行一遍
+
+% lspage='ls | more'
+% $lspage # 错误
+% eval $lspage
+
+```
 
 ### good practice
 [[lang.bash.good.practice]]
