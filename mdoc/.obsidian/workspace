@@ -4,30 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "ff798517d02c1a04",
+        "id": "dc4280a1e3e96cfa",
         "type": "leaf",
-        "dimension": 79.69543147208121,
+        "dimension": 66.24472573839662,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md",
+            "file": "lll.lang/bash/lang.bash.trap.md",
             "mode": "source",
             "source": true
           }
-        },
-        "group": "a3b5e555e778d9ca"
+        }
       },
       {
         "id": "43051d15563a285b",
         "type": "leaf",
-        "dimension": 20.304568527918782,
+        "dimension": 33.755274261603375,
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md"
+            "file": "lll.lang/bash/lang.bash.trap.md"
           }
-        },
-        "group": "a3b5e555e778d9ca"
+        }
       }
     ],
     "direction": "vertical"
@@ -91,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md",
+                "file": "lll.lang/bash/lang.bash.trap.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md"
+                "file": "lll.lang/bash/lang.bash.trap.md"
               }
             }
           },
@@ -147,17 +145,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "ff798517d02c1a04",
+  "active": "dc4280a1e3e96cfa",
   "lastOpenFiles": [
-    "lll.lang/bash/lang.bash.variables.md",
+    "Untitled.md",
+    "lll.lang/bash/lang.bash.trap.md",
     "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.good.practice.md",
+    "lll.lang/bash/lang.bash.heredoc.md",
+    "lll.lang/bash/snippet.bash.mailx.md",
+    "lll.lang/bash/lang.bash.variables.md",
     "snippet/bash/snippet.curl.md",
     "snippet/vscode.snippet.md",
-    "snippet/vim.snippet.md",
-    "snippet/bash/snippet.linux.network.md",
-    "snippet/bash/snippet.linux.md",
-    "snippet/snippet.kernel theory.md",
-    "snippet/snippet.flume.md",
-    "snippet/bash/snippet.cert.md"
+    "snippet/vim.snippet.md"
   ]
 }

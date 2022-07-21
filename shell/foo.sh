@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+
+set -e
+set -o pipefail
+ls -l ./xfoo.sh|cat|wc -l
+
+
+echo done
+exit
 envvar=$1
 
 dirpath=`eval echo '${'$1'}'`

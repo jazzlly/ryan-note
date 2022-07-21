@@ -1,4 +1,3 @@
-
 ### variable 
 [[lang.bash.variables]]
 
@@ -373,7 +372,24 @@ do
 done | less
 ```
 
+### pipe
+```sh
+管道命令在自己的子shell进程中执行
+
+
+
+将command1的标准输出作为command2的标准输入
+% commad1 | command2
+
+cmd1的标准输出，标准错误作为cmd2的标准输入
+% cmd1 2>&1 | cmd2
+
+2>&1 | 的简写
+% cmd1 |& cmd2
+```
+
 ### here document
+[[lang.bash.heredoc]]
 ```sh
 
 # 将EOF引用后，就不会替换here document中的变量
@@ -540,5 +556,10 @@ README
 /Users/jiangrui/git/ryan/ryan-note
 
 ```
+
+
+### trap
+
+
 ### good practice
 [[lang.bash.good.practice]]
