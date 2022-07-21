@@ -1,21 +1,33 @@
 
+### dollar sign
 ```sh
+
+# 按照键盘顺序记忆
+
+$! 最后一个后台进程号, 可以wait
 
 $$ 当前进程号
 
 $? 命令结果
 
-${#var} 变量字符长度
-
 $0 程序名称，不包括任何参数
-
-$! 最后一个进程号, 可以wait
 
 $PPID 父进程编号
 
 $PS1 命令行主提示符
 $PS2 命令行从提示符
 $PS4 set -x时提示符
+
+$- shell打开的所有选项
+
+% echo $-
+569XZilms
+% set -x; echo $-
+569XZilmsx
+
+$(command)  执行命令
+${val}   变量展开
+${#var}  变量字符长度
 
 ```
 
@@ -87,7 +99,7 @@ done
 var=foo
 
 # 如果var不存在显示bar
-echo ${var:-bar} # var
+echo ${var:-bar} # foo
 echo ${varr:-bar} # bar
 
 # 如果位置参数1不存在, 则...
@@ -103,7 +115,11 @@ ${varr:?message}
 ${varr:?} # 默认输出 zsh: varr: parameter not set
 
 # var存在且非null, 返回word。否则返回null
-${var:+word}
+${var:+word}  # if var return word else return null
+
+
+
+
 ${count:+1}
 
 # :是可选的，测试存在，并非null

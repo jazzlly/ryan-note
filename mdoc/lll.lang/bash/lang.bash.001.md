@@ -433,6 +433,8 @@ PID TTY           TIME CMD
 % read user
 % cd ~${user}  # 进入user的家目录
 
+% ~+  # PWD展开
+
 ? 单个字符
 [a-z] 小写字母
 [!a-z] 非小写字母
@@ -447,6 +449,7 @@ $(command)
 ### eval ; command exec sequence
 ```sh
 执行顺序
+- 通过token分隔语句，token包括; | 等等。
 - 检查是否是复合语句，如果是，展开命令
 - 别名替换
 - 波浪号替换
@@ -461,10 +464,74 @@ $(command)
 eval可将脚本再按照循序执行一遍
 
 % lspage='ls | more'
-% $lspage # 错误
+
+# 变量展开后，没有执行最开始的token化(第一步)
+# 所以看到的是一整条命令ls | more
+% $lspage 
 % eval $lspage
 
 ```
 
+
+### subshell ; code block
+```sh
+
+# subshell在另外进程执行。不会影响当前目录和变量
+tar -cf - . | (cd /tmp; tar -xpf -)
+tar cvfz - ryan-note | (cd ~ryan; tar xvfz -)
+
+# subshell接受IO重定向。subshell退出不影响当前shell
+echo "ryan" | (read name; echo hello ${name};exit)
+
+# 代码块还是在当前进程执行，会受到当前目录的影响和变量
+# 必须在newline, 分号，关键字之后
+cd /tmp && {
+  echo $PWD
+  echo haha
+}
+
+# 代码块接受IO重定向
+echo "ryan" | {read name; echo hello ${name}!}
+
+
+```
+
+### command sequence
+```sh
+1. 特殊build-in命令
+2. shell函数
+3. 一般build-in命令
+4. $PATH中包括的命令
+```
+
+### wait
+```sh
+% sleep 60&
+[1] 7695
+% wait 7695
+
+
+```
+
+### set
+```sh
+% set   # 显示所有变量的值
+
+```
+
+### basename
+```sh
+提取路径中的文件名
+
+% basename /Users/jiangrui/git/ryan/ryan-note/README.md
+README.md
+
+% basename /Users/jiangrui/git/ryan/ryan-note/README.md .md
+README
+
+% dirname /Users/jiangrui/git/ryan/ryan-note/README.md
+/Users/jiangrui/git/ryan/ryan-note
+
+```
 ### good practice
 [[lang.bash.good.practice]]

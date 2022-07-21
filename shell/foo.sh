@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+envvar=$1
+
+dirpath=`eval echo '${'$1'}'`
+
+echo $dirpath
+
+
+exit
 # set -ex
 i=5
 cat<<'E'OF
