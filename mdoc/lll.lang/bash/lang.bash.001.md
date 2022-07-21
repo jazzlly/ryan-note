@@ -44,6 +44,13 @@ info="$fullname haha!"
 	
 ```
 
+### ls
+```sh
+# 查看所有目录
+ls -d */
+
+ls -d /home/emmjava/$p/app_services/*/
+```
 ### printf
 ```bash
 printf format-string [arguments ...]

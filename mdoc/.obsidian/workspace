@@ -149,6 +149,7 @@
   },
   "active": "ff798517d02c1a04",
   "lastOpenFiles": [
+    "lll.lang/bash/lang.bash.variables.md",
     "lll.lang/bash/lang.bash.001.md",
     "snippet/bash/snippet.curl.md",
     "snippet/vscode.snippet.md",
@@ -157,7 +158,6 @@
     "snippet/bash/snippet.linux.md",
     "snippet/snippet.kernel theory.md",
     "snippet/snippet.flume.md",
-    "snippet/bash/snippet.cert.md",
-    "snippet/snippet rubiks cube魔方.md"
+    "snippet/bash/snippet.cert.md"
   ]
 }
