@@ -429,8 +429,8 @@ exec 2>/tmp/$$.log
 
 ```
 
-
 ### terminal
+
 ```sh
 
 # 重定向标准错误, 在osx有效，linux中无效
@@ -559,7 +559,7 @@ README
 
 
 ### trap
-
+[[lang.bash.trap]]
 
 ### good practice
 [[lang.bash.good.practice]]

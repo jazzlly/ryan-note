@@ -54,7 +54,7 @@ do
 done
 ```
 
-### disable interrupt
+### disable/enable interrupt
 ```sh
 
 -----------------------------
@@ -71,8 +71,7 @@ not_so_important_command
 ```
 
 
-###
-父shell trap的信号对于子shell无效
+### 父shell trap的信号对于子shell无效
 ```sh
 # 父shell
 
@@ -108,7 +107,6 @@ kill -SIGUSR1 1002
 #!/usr/bin/env bash
 
 # trap "touch pipe.broken;exit" PIPE
-
 while true
 do
   echo looping ....
