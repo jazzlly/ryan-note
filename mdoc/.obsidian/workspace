@@ -4,28 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "dc4280a1e3e96cfa",
+        "id": "ff798517d02c1a04",
         "type": "leaf",
-        "dimension": 66.24472573839662,
+        "dimension": 79.69543147208121,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.trap.md",
+            "file": "100.kernel/linux.terminal.tty.pty.md",
             "mode": "source",
             "source": true
           }
-        }
+        },
+        "group": "a3b5e555e778d9ca"
       },
       {
         "id": "43051d15563a285b",
         "type": "leaf",
-        "dimension": 33.755274261603375,
+        "dimension": 20.304568527918782,
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.trap.md"
+            "file": "100.kernel/linux.terminal.tty.pty.md"
           }
-        }
+        },
+        "group": "a3b5e555e778d9ca"
       }
     ],
     "direction": "vertical"
@@ -89,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.trap.md",
+                "file": "100.kernel/linux.terminal.tty.pty.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.trap.md"
+                "file": "100.kernel/linux.terminal.tty.pty.md"
               }
             }
           },
@@ -145,17 +147,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dc4280a1e3e96cfa",
+  "active": "ff798517d02c1a04",
   "lastOpenFiles": [
-    "Untitled.md",
-    "lll.lang/bash/lang.bash.trap.md",
+    "100.kernel/2022.05.16 linux virtual network 网络虚拟化原理.md",
+    "100.kernel/2022.05.16 linux network namespace.md",
     "lll.lang/bash/lang.bash.001.md",
-    "lll.lang/bash/lang.bash.good.practice.md",
-    "lll.lang/bash/lang.bash.heredoc.md",
-    "lll.lang/bash/snippet.bash.mailx.md",
+    "lll.lang/bash/lang.bash.trap.md",
     "lll.lang/bash/lang.bash.variables.md",
     "snippet/bash/snippet.curl.md",
     "snippet/vscode.snippet.md",
-    "snippet/vim.snippet.md"
+    "snippet/vim.snippet.md",
+    "snippet/bash/snippet.linux.network.md",
+    "snippet/bash/snippet.linux.md"
   ]
 }
