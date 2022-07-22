@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.trap.md",
+            "file": "000.inbox/pekall info.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.trap.md"
+            "file": "000.inbox/pekall info.md"
           }
         }
       }
@@ -89,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.trap.md",
+                "file": "000.inbox/pekall info.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.trap.md"
+                "file": "000.inbox/pekall info.md"
               }
             }
           },
@@ -147,15 +147,15 @@
   },
   "active": "dc4280a1e3e96cfa",
   "lastOpenFiles": [
-    "Untitled.md",
+    "000.inbox/pekall 内部服务器.md",
+    "000.inbox/pekall info.md",
     "lll.lang/bash/lang.bash.trap.md",
+    "Untitled.md",
     "lll.lang/bash/lang.bash.001.md",
     "lll.lang/bash/lang.bash.good.practice.md",
     "lll.lang/bash/lang.bash.heredoc.md",
     "lll.lang/bash/snippet.bash.mailx.md",
     "lll.lang/bash/lang.bash.variables.md",
-    "snippet/bash/snippet.curl.md",
-    "snippet/vscode.snippet.md",
-    "snippet/vim.snippet.md"
+    "snippet/bash/snippet.curl.md"
   ]
 }
