@@ -36,3 +36,9 @@ jiangrui@bogon ~ % read /dev/ttys000
 haha
 ```
 
+### reference
+理解 Linux 终端、终端模拟器和伪终端
+
+
+https://github.com/mz1999/blog
+https://xie.infoq.cn/article/a6153354865c225bdce5bd55e

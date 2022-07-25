@@ -1,0 +1,163 @@
+{
+  "main": {
+    "id": "51c208f120333019",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff798517d02c1a04",
+        "type": "leaf",
+        "dimension": 79.69543147208121,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "lll.lang/bash/lang.bash.001.md",
+            "mode": "source",
+            "source": true
+          }
+        },
+        "group": "a3b5e555e778d9ca"
+      },
+      {
+        "id": "43051d15563a285b",
+        "type": "leaf",
+        "dimension": 20.304568527918782,
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "lll.lang/bash/lang.bash.001.md"
+          }
+        },
+        "group": "a3b5e555e778d9ca"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f355cf6724d0415f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0dbbb5e3e822b7b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bdd40459d4d41d15",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6d1562e6e46429f3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "MYSQL_PASSWORD",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3ad52738da1dbf3b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 291.0129165649414
+  },
+  "right": {
+    "id": "5dabb4d81f47b3bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "55487db5e969b751",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "89eb418bfe067b31",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "lll.lang/bash/lang.bash.001.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "febc5ef82320efa5",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "8a079766c79130f2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a513c056a3c4bd2f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "lll.lang/bash/lang.bash.001.md"
+              }
+            }
+          },
+          {
+            "id": "9c9f5e6a0c6ef1df",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ff798517d02c1a04",
+  "lastOpenFiles": [
+    "002.health/2022.01.09 badminton.md",
+    "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.awk.md",
+    "000.inbox/inbox.md.md",
+    "100.kernel/linux.terminal.tty.pty.md",
+    "100.kernel/2022.05.16 linux virtual network 网络虚拟化原理.md",
+    "100.kernel/2022.05.16 linux network namespace.md",
+    "lll.lang/bash/lang.bash.trap.md",
+    "lll.lang/bash/lang.bash.variables.md",
+    "snippet/bash/snippet.curl.md"
+  ]
+}

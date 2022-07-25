@@ -1,3 +1,12 @@
+### help
+```sh
+
+获取posix标注配置
+% getconf -a
+% getconf ARG_MAX
+
+```
+
 ### variable 
 [[lang.bash.variables]]
 
@@ -47,9 +56,17 @@ info="$fullname haha!"
 ```sh
 # 查看所有目录
 ls -d */
-
 ls -d /home/emmjava/$p/app_services/*/
+
+-1 : -one 强制单栏输出
+-R : 递归显示目录，文件
+-S : 按照大到小顺序排列
+-t : 按照最后修改时间排序
+
 ```
+
+
+
 ### printf
 ```bash
 printf format-string [arguments ...]
@@ -538,6 +555,7 @@ echo "ryan" | {read name; echo hello ${name}!}
 
 ### set
 ```sh
+
 % set   # 显示所有变量的值
 
 ```
@@ -557,9 +575,36 @@ README
 
 ```
 
+### file
+```sh
+# 查找top 10空间占用目录
+% du -s -k /home/emmjava/* | sort -k1nr|head -n 10
+
+
+```
+
+### random
+```sh
+% /dev/random 提供高质量的随机数， 会block
+% /dev/urandom 随机程度不高，不会block
+
+```
 
 ### trap
 [[lang.bash.trap]]
+
+### process
+```sh
+------------------------
+好用的系统命令
+w, 
+iostat, netstat, nfsstat, sar, uptime, vmstat, w, xcpustat, xload, xperfmon
+
+ps aux
+ps axjf
+
+```
+
 
 ### good practice
 [[lang.bash.good.practice]]

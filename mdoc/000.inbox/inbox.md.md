@@ -67,3 +67,8 @@ https://code.visualstudio.com/docs/editor/codebasics#:~:text=VS%20Code%20support
 - 公司搬家，需要清理一下健身器材
 	- 利用周六开车到公司
 	- 每天带一件东西回家/或扔一件东西
+
+# reading list
+
+
+https://github.com/mz1999/blog
