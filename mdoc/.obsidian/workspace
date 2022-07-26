@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md",
+            "file": "snippet/snippet.maven.md",
             "mode": "source",
             "source": true
           }
@@ -24,7 +24,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md"
+            "file": "snippet/snippet.maven.md"
           }
         },
         "group": "a3b5e555e778d9ca"
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "MYSQL_PASSWORD",
+                "query": "top",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md",
+                "file": "snippet/snippet.maven.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md"
+                "file": "snippet/snippet.maven.md"
               }
             }
           },
@@ -149,15 +149,15 @@
   },
   "active": "ff798517d02c1a04",
   "lastOpenFiles": [
-    "002.health/2022.01.09 badminton.md",
+    "000.inbox/pekall info.md",
+    "lll.lang/java/java performance tunning.md",
+    "lll.lang/java/java.error.collection.md",
     "lll.lang/bash/lang.bash.001.md",
+    "002.health/2022.01.09 badminton.md",
     "lll.lang/bash/lang.bash.awk.md",
     "000.inbox/inbox.md.md",
     "100.kernel/linux.terminal.tty.pty.md",
     "100.kernel/2022.05.16 linux virtual network 网络虚拟化原理.md",
-    "100.kernel/2022.05.16 linux network namespace.md",
-    "lll.lang/bash/lang.bash.trap.md",
-    "lll.lang/bash/lang.bash.variables.md",
-    "snippet/bash/snippet.curl.md"
+    "100.kernel/2022.05.16 linux network namespace.md"
   ]
 }

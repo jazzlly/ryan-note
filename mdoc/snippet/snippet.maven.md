@@ -1,3 +1,11 @@
+### dependency error
+```sh
+检查dependency错误
+
+% mvn dependency:tree -X
+
+```
+
 ### ssl ignore
 ```
 mvn -Dmaven.wagon.http.ssl.insecure=true  -Dmaven.wagon.http.ssl.allowall=true install
