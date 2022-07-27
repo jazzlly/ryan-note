@@ -1,5 +1,11 @@
 ### help
 ```sh
+man
+
+help test
+help read
+
+LC_ALL=C type read
 
 获取posix标注配置
 % getconf -a
@@ -393,8 +399,6 @@ done | less
 ```sh
 管道命令在自己的子shell进程中执行
 
-
-
 将command1的标准输出作为command2的标准输入
 % commad1 | command2
 
@@ -403,8 +407,95 @@ cmd1的标准输出，标准错误作为cmd2的标准输入
 
 2>&1 | 的简写
 % cmd1 |& cmd2
+
+查看pipe每条命令的执行结果
+% echo ${PIPESTATUS[@]}
+
+------------------------------------
+broken pipe: 返回值141
+$ seq 1 10000 | head -1
+1
+
+$ echo ${PIPESTATUS[@]}
+141 0
+-----------------------------------
+grep -q 第一次匹配成功后，就会会立即退出。netstat还是会继续向pipe中输出信息，这样就会导致netstat收到broken pipe的signal, 最后netstat返回141
+
+if netstat -anp|grep -q '9210.*LISTEN.*java';then
+  echo ${PIPESTATUS[@]} # 141 0
+  return 0
+else
+  return 1
+fi
+
+好的方式是
+
+if netstat -anp|grep '9210.*LISTEN.*java' > /dev/null 2>&1;then
+  echo ${PIPESTATUS[@]} # 141 0
+  return 0
+else
+  return 1
+fi
+
+process substitution
+% grep -q '9210.*LISTEN.*java' <(netstat -anp)
 ```
 
+### process substitution
+```sh
+
+https://tldp.org/LDP/abs/html/process-sub.html
+可以将进程的输入和输出变成一个文件名
+<(command) # command的输出变成了一个文件 /dev/fd/63
+>(command) # command的输入变成了一个文件
+
+% echo >(true)
+% touch /tmp/foo; echo /tmp/foo;  true < /tmp/foo; rm /tmp/foo
+
+% echo <(true)
+% touch /tmp/foo; true > /tmp/foo; echo /tmp/foo;rm /tmp/foo
+
+[root@uas ~]# ls
+test_all.sh  tmp_poca.sh  two_node_rel_p2.sh
+echo后面如果是文件名，就会输出文件名
+[root@uas ~]# echo ./tmp_poca.sh
+./tmp_poca.sh
+[root@uas ~]# echo <(date)
+/dev/fd/63
+
+
+[root@uas ~]# wc <(cat /usr/share/dict/linux.words)
+ 479828  479828 4953680 /dev/fd/63
+[root@uas ~]# wc /usr/share/dict/linux.words
+ 479828  479828 4953680 /usr/share/dict/linux.words
+
+使用两条命令作为输入
+comm <(ls -l) <(ls -al)
+
+diff <(ls $first_directory) <(ls $second_directory)
+
+# Calculate 2+ checksums while also writing the file
+wget -O - http://example.com/dvd.iso | tee >(sha1sum > dvd.sha1) >(md5sum > dvd.md5) > dvd.iso
+
+# Accept input from two 'sort' processes at the same time
+comm -12 <(sort file1) <(sort file2)
+
+read -a list < <( od -d -w24 /dev/urandom )
+
+curl -i -v -s -X POST -b ./cookie.txt -H 'Content-Type:application/json' \
+http://uas.pekall.com:9200/uni_auth/v1/enterprise_users \
+    --data @<(cat<<EOF
+    {
+      "name": "test",
+      "orgCode": "${orgcode}",
+      ...
+      "division": 110100
+    }
+EOF   # 顶头写，不能有空格
+    )'
+    
+
+```
 ### here document
 [[lang.bash.heredoc]]
 ```sh
