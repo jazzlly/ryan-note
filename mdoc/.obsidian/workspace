@@ -6,11 +6,11 @@
       {
         "id": "ff4d037649079745",
         "type": "leaf",
-        "dimension": 82.89136013686912,
+        "dimension": 82.89136013686911,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md",
+            "file": "lll.lang/bash/lang.bash.good.practice.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md"
+            "file": "lll.lang/bash/lang.bash.good.practice.md"
           }
         }
       }
@@ -73,8 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.0129165649414,
-    "collapsed": true
+    "width": 291.0129165649414
   },
   "right": {
     "id": "5dabb4d81f47b3bd",
@@ -90,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md",
+                "file": "lll.lang/bash/lang.bash.good.practice.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md"
+                "file": "lll.lang/bash/lang.bash.good.practice.md"
               }
             }
           },
@@ -148,15 +147,15 @@
   },
   "active": "ff4d037649079745",
   "lastOpenFiles": [
-    "snippet/bash/snippet.curl.md",
     "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.awk.md",
+    "xxx.tech/ssh/ssh.client.md",
+    "lll.lang/git.concept.md",
+    "snippet/bash/snippet.curl.md",
     "lll.lang/bash/lang.bash.good.practice.md",
     "xxx.tech/flink/001.flink.intro.md",
     "snippet/snippet.maven.md",
     "000.inbox/pekall info.md",
-    "lll.lang/java/java performance tunning.md",
-    "lll.lang/java/java.error.collection.md",
-    "002.health/2022.01.09 badminton.md",
-    "lll.lang/bash/lang.bash.awk.md"
+    "lll.lang/java/java performance tunning.md"
   ]
 }
