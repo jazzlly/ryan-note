@@ -1,4 +1,7 @@
 
+### cu225 guganyun
+ emmjava / Wocloud.cn@234
+
 ### cu225 9.11 test
 平台门户：                 https://bj.police.everknow.cn:4442  
 移动设备管理平台：    https://bj.police.everknow.cn:4455  
@@ -65,8 +68,6 @@ ssh -p 8022 root@20.30.2.11
 
 ssh root@20.30.2.11 -p 8022
 ssh 26.3.15.99 -p 20029
-
-  
 
 ### gab 公安部部平台mdm
 ssh root@20.30.2.11 -p 8022

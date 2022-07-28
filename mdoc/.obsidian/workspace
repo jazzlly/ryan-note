@@ -4,9 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "ff798517d02c1a04",
+        "id": "ff4d037649079745",
         "type": "leaf",
-        "dimension": 79.69543147208121,
+        "dimension": 82.89136013686912,
         "state": {
           "type": "markdown",
           "state": {
@@ -14,20 +14,18 @@
             "mode": "source",
             "source": true
           }
-        },
-        "group": "a3b5e555e778d9ca"
+        }
       },
       {
         "id": "43051d15563a285b",
         "type": "leaf",
-        "dimension": 20.304568527918782,
+        "dimension": 17.108639863130882,
         "state": {
           "type": "outline",
           "state": {
             "file": "lll.lang/bash/lang.bash.001.md"
           }
-        },
-        "group": "a3b5e555e778d9ca"
+        }
       }
     ],
     "direction": "vertical"
@@ -54,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "MYSQL_PASSWORD",
+                "query": "top",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -75,7 +73,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.0129165649414
+    "width": 291.0129165649414,
+    "collapsed": true
   },
   "right": {
     "id": "5dabb4d81f47b3bd",
@@ -147,17 +146,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "ff798517d02c1a04",
+  "active": "ff4d037649079745",
   "lastOpenFiles": [
-    "002.health/2022.01.09 badminton.md",
+    "snippet/bash/snippet.curl.md",
     "lll.lang/bash/lang.bash.001.md",
-    "lll.lang/bash/lang.bash.awk.md",
-    "000.inbox/inbox.md.md",
-    "100.kernel/linux.terminal.tty.pty.md",
-    "100.kernel/2022.05.16 linux virtual network 网络虚拟化原理.md",
-    "100.kernel/2022.05.16 linux network namespace.md",
-    "lll.lang/bash/lang.bash.trap.md",
-    "lll.lang/bash/lang.bash.variables.md",
-    "snippet/bash/snippet.curl.md"
+    "lll.lang/bash/lang.bash.good.practice.md",
+    "xxx.tech/flink/001.flink.intro.md",
+    "snippet/snippet.maven.md",
+    "000.inbox/pekall info.md",
+    "lll.lang/java/java performance tunning.md",
+    "lll.lang/java/java.error.collection.md",
+    "002.health/2022.01.09 badminton.md",
+    "lll.lang/bash/lang.bash.awk.md"
   ]
 }
