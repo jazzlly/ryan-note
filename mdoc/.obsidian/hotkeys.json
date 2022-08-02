@@ -60,5 +60,13 @@
       ],
       "key": "Enter"
     }
+  ],
+  "file-explorer:new-file": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Insert"
+    }
   ]
 }

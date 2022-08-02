@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.good.practice.md",
+            "file": "000.inbox/pekall info.md",
             "mode": "source",
             "source": true
           }
@@ -23,7 +23,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "lll.lang/bash/lang.bash.good.practice.md"
+            "file": "000.inbox/pekall info.md"
           }
         }
       }
@@ -89,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.good.practice.md",
+                "file": "000.inbox/pekall info.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.good.practice.md"
+                "file": "000.inbox/pekall info.md"
               }
             }
           },
@@ -147,15 +147,15 @@
   },
   "active": "ff4d037649079745",
   "lastOpenFiles": [
+    "xxx.tech/flink/001.flink.intro.md",
+    "000.inbox/pekall 内部服务器.md",
+    "snippet.shell.find.md",
     "lll.lang/bash/lang.bash.001.md",
+    "snippet/bash/snippet.cygwin.mingw.md",
+    "snippet/bash/snippet.bash.md",
+    "lll.lang/bash/lang.bash.good.practice.md",
     "lll.lang/bash/lang.bash.awk.md",
     "xxx.tech/ssh/ssh.client.md",
-    "lll.lang/git.concept.md",
-    "snippet/bash/snippet.curl.md",
-    "lll.lang/bash/lang.bash.good.practice.md",
-    "xxx.tech/flink/001.flink.intro.md",
-    "snippet/snippet.maven.md",
-    "000.inbox/pekall info.md",
-    "lll.lang/java/java performance tunning.md"
+    "lll.lang/git.concept.md"
   ]
 }

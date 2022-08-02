@@ -711,6 +711,9 @@ b: 切换高亮显示
 
 W: 将当前的命令键盘命令保存到配置文件中，下次启动自动开启
 
+### find
+
+
 
 ### good practice
 [[lang.bash.good.practice]]
