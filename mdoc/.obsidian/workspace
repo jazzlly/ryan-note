@@ -4,26 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "ff4d037649079745",
+        "id": "ff798517d02c1a04",
         "type": "leaf",
-        "dimension": 82.89136013686912,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lll.lang/bash/lang.bash.001.md",
+            "file": "100.kernel/linux.terminal.tty.pty.md",
             "mode": "source",
             "source": true
-          }
-        }
-      },
-      {
-        "id": "43051d15563a285b",
-        "type": "leaf",
-        "dimension": 17.108639863130882,
-        "state": {
-          "type": "outline",
-          "state": {
-            "file": "lll.lang/bash/lang.bash.001.md"
           }
         }
       }
@@ -52,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "top",
+                "query": "MYSQL_PASSWORD",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -90,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md",
+                "file": "100.kernel/linux.terminal.tty.pty.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/lang.bash.001.md"
+                "file": "100.kernel/linux.terminal.tty.pty.md"
               }
             }
           },
@@ -146,17 +134,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "ff4d037649079745",
+  "active": "ff798517d02c1a04",
   "lastOpenFiles": [
-    "snippet/bash/snippet.curl.md",
     "lll.lang/bash/lang.bash.001.md",
-    "lll.lang/bash/lang.bash.good.practice.md",
-    "xxx.tech/flink/001.flink.intro.md",
-    "snippet/snippet.maven.md",
-    "000.inbox/pekall info.md",
-    "lll.lang/java/java performance tunning.md",
-    "lll.lang/java/java.error.collection.md",
     "002.health/2022.01.09 badminton.md",
-    "lll.lang/bash/lang.bash.awk.md"
+    "lll.lang/bash/lang.bash.awk.md",
+    "000.inbox/inbox.md.md",
+    "100.kernel/linux.terminal.tty.pty.md",
+    "100.kernel/2022.05.16 linux virtual network 网络虚拟化原理.md",
+    "100.kernel/2022.05.16 linux network namespace.md",
+    "lll.lang/bash/lang.bash.trap.md",
+    "lll.lang/bash/lang.bash.variables.md",
+    "snippet/bash/snippet.curl.md"
   ]
 }
