@@ -474,6 +474,9 @@ comm <(ls -l) <(ls -al)
 
 diff <(ls $first_directory) <(ls $second_directory)
 
+sort -k 9 <(ls -l /bin) <(ls -l /usr/bin) <(ls -l /usr/X11R6/bin)
+
+
 # Calculate 2+ checksums while also writing the file
 wget -O - http://example.com/dvd.iso | tee >(sha1sum > dvd.sha1) >(md5sum > dvd.md5) > dvd.iso
 
@@ -493,7 +496,8 @@ http://uas.pekall.com:9200/uni_auth/v1/enterprise_users \
     }
 EOF   # 顶头写，不能有空格
     )'
-    
+
+
 
 ```
 ### here document
@@ -706,6 +710,9 @@ z: 切换彩色显示
 b: 切换高亮显示
 
 W: 将当前的命令键盘命令保存到配置文件中，下次启动自动开启
+
+### find
+
 
 
 ### good practice

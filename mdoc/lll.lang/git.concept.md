@@ -1,5 +1,11 @@
 # Git概念
 
+### help
+```sh
+
+GIT_SSH_COMMAND='ssh -vvvv' GIT_TRACE=1 git push
+
+```
 ## 分支跟踪概念
 
 远程分支和本地分支的对应关系保存在 下面文件中
@@ -22,3 +28,5 @@
         remote = origin             # 对应远程仓库
 		merge = refs/heads/dev1.5   # 对应远程跟踪分支
 ```
+
+

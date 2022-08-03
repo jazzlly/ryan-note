@@ -37,3 +37,12 @@ do
 done
 
 ```
+
+### remove huge number of files
+```sh
+http://linuxnote.net/jianingy/en/linux/a-fast-way-to-remove-huge-number-of-files.html
+
+% rsync -a –delete empty/ target_dir
+```
+
+![[rm_huge_num_files.png]]
