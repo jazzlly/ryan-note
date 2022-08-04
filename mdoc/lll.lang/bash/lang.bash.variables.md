@@ -146,3 +146,16 @@ ${f##/*/}
 ${f%.*}
 ${f%%.**}
 ```
+
+
+### internal variables
+
+```sh
+export CDPATH=$CDPATH:/c/Users/think/git/pekall
+cd server
+
+# 下面两条命令等效
+cd -
+cd $OLDPWD
+
+```
