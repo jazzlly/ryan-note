@@ -1,3 +1,25 @@
+# scope
+```sh
+
+export
+readonly
+local
+```
+
+### readonly
+```sh
+readonly foo=bar
+
+readonly xixi=haha
+declare -p xixi
+declare -r xixi="haha"
+
+foo=xxx 
+-bash: foo: readonly variable
+
+unset foo
+-bash: unset: foo: cannot unset: readonly variable
+```
 
 ### dollar sign
 ```sh
