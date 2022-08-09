@@ -1,3 +1,11 @@
+# quote
+```sh
+y=`ls -l`
+echo $y    -- 换行被去掉了
+echo "$y"  -- 换行没有被去掉
+
+```
+
 # scope
 ```sh
 
@@ -6,11 +14,24 @@ readonly
 local
 ```
 
+### declare
+```sh
+
+declare # 输出所有的变量，局部变量，函数
+
+declare -r # readonly
+
+--- declare将变量scope限制在函数内部
+出了函数，该变量就被unset了
+
+```
+
 ### readonly
 ```sh
 readonly foo=bar
 
 readonly xixi=haha
+
 declare -p xixi
 declare -r xixi="haha"
 
@@ -50,6 +71,11 @@ $- shell打开的所有选项
 $(command)  执行命令
 ${val}   变量展开
 ${#var}  变量字符长度
+
+${string:position:len}  按照位置提取子串
+${string: (-4)} 从后面提取
+${string: -4:3}
+
 
 ```
 
@@ -167,6 +193,13 @@ ${f#/*/}
 ${f##/*/}
 ${f%.*}
 ${f%%.**}
+
+# 替换第一个找到的substring
+${string/substring/replacement}
+
+# 替换所有的找到的substring
+${string/
+/substring/replacement}
 ```
 
 
