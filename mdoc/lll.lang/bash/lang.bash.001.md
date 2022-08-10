@@ -737,5 +737,14 @@ cd ~3
 
 ```
 
+### IFS ; join
+```sh
+-- join array
+array=(1 2 3)
+joined_str=$(IFS=, ; echo "${array[*]}")
+
+```
+
+
 ### good practice
 [[lang.bash.good.practice]]
