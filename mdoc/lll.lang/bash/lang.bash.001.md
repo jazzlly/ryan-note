@@ -713,7 +713,26 @@ W: 将当前的命令键盘命令保存到配置文件中，下次启动自动�
 
 ### find
 
+### dir stack ; pushd popd dirs
+https://www.jianshu.com/p/53cccae3c443
+```sh
 
+export dirstack=(
+/e/git/jiangrui/ryan-note
+/e/BaiduNetdiskWorkspace
+/c/Users/think/git/pekall/deps/new_police_deploy
+/c/Users/think/git/pekall/server
+)
+for dir in "${dirstack[@]}"; do
+    pushd -n "$dir" >/dev/null
+done
+unset dirstack
+
+直接进入stack中的目录
+cd ~2
+cd ~3
+
+```
 
 ### good practice
 [[lang.bash.good.practice]]
