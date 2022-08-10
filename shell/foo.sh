@@ -1,5 +1,25 @@
 #!/usr/bin/env bash
 
+output_args() {
+  for arg
+  do
+    echo "[$arg]"
+  done
+}
+
+IFS=:
+var=':a::b:::c::::'
+output_args $var
+
+exit
+
+xyz() {
+  echo func name: $FUNCNAME
+}
+
+xyz
+
+exit 0
 
 set -e
 set -o pipefail

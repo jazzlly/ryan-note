@@ -13,6 +13,25 @@ LC_ALL=C type read
 
 ```
 
+### debug
+```sh
+
+-- Prints shell input lines as they are read
+set -v  == set -o verbose
+
+-- print command traces before executing command
+set -x == set -o xtrace
+
+set -xv
+cmd="ps aux"
+proc="ps aux"
+eval "$cmd"|grep "$proc"
+
+#!/usr/bin/env bash -xv
+
+```
+
+
 ### variable 
 [[lang.bash.variables]]
 
@@ -582,30 +601,7 @@ $(command)
 ```
 
 ### eval ; command exec sequence
-```sh
-执行顺序
-- 通过token分隔语句，token包括; | 等等。
-- 检查是否是复合语句，如果是，展开命令
-- 别名替换
-- 波浪号替换
-- 变量替换
-- 命令替换
-- 算术表达式替换
-- 从变量，命令，算术替换中获取结果，使用IFS进行分隔
-- 通配符展开，?*[] 文件名生成
-- 使用第一个单词作为第一个命令，查找path中第一个文件
-- 完成IO重定向，执行命令
-
-eval可将脚本再按照循序执行一遍
-
-% lspage='ls | more'
-
-# 变量展开后，没有执行最开始的token化(第一步)
-# 所以看到的是一整条命令ls | more
-% $lspage 
-% eval $lspage
-
-```
+[[lang.bash.eval]]
 
 
 ### subshell ; code block
@@ -652,6 +648,13 @@ echo "ryan" | {read name; echo hello ${name}!}
 ```sh
 
 % set   # 显示所有变量的值
+
+--------
+设置位置参数
+
+set -- arg1 arg2 arg3
+echo $2 # arg2
+
 
 ```
 
