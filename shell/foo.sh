@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+for i in `seq 1 $#`
+do
+  echo \$$i
+  eval echo \$$i 
+done
+
+exit
+
 output_args() {
   for arg
   do
