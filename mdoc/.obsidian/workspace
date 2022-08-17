@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "xxx.tech/flink/001.flink.intro.md",
+            "file": "lll.lang/bash/lang.bash.eval.md",
             "mode": "source",
             "source": true
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "eval",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,7 +57,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "xxx.tech/flink/001.flink.intro.md",
+                "file": "lll.lang/bash/lang.bash.eval.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "xxx.tech/flink/001.flink.intro.md"
+                "file": "lll.lang/bash/lang.bash.eval.md"
               }
             }
           }
@@ -117,5 +118,12 @@
     "collapsed": true
   },
   "active": "69b71ef4a9eecd08",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.eval.md",
+    "snippet/snippet.flume.md",
+    "cmc directus flume docker.md",
+    "000.inbox/arch/2022.05.14 集中管控架构设计(2022 cmc docker directus flume).md",
+    "xxx.tech/flink/001.flink.intro.md"
+  ]
 }
