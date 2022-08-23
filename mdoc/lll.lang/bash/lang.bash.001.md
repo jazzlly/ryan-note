@@ -237,7 +237,6 @@ echo $((i+=2)) $i # 9 9
 
 ```
 
-
 ### exit
 ```sh
 # 正常退出 0
@@ -783,5 +782,55 @@ echo ${#array[@]}
 
 ```
 
+### quote
+```sh
+% echo "$(ls -l)"         -- 输出两行
+% echo $(ls -l)           -- 输出一行
+
+-- 一般为变量加上双引号
+% echo "$var"
+
+
+-------------------------------------------------
+-- 双引号会禁止空格的分词功能
+list="one two three"
+for w in $list;do echo $w;done
+one
+two
+three
+for w in "$list";do echo $w;done
+one two three
+
+-------------------------------------------------
+variable1="a variable containing five words"
+COMMAND This is $variable1    # Executes COMMAND with 7 arguments:
+# "This" "is" "a" "variable" "containing" "five" "words"
+
+COMMAND "This is $variable1"  # Executes COMMAND with 1 argument:
+# "This is a variable containing five words"
+
+variable2=""    # Empty.
+
+COMMAND $variable2 $variable2 $variable2
+                # Executes COMMAND with no arguments. 
+COMMAND "$variable2" "$variable2" "$variable2"
+                # Executes COMMAND with 3 empty arguments. 
+COMMAND "$variable2 $variable2 $variable2"
+                # Executes COMMAND with 1 argument (2 spaces).
+
+
+----------------------------------------------------
+-- 双引号会禁止globbing
+
+% echo *          # 显示当前目录所有文件
+% echo "*"        # 输出 *
+% ls *
+% ls "*"          # 输出错误信息
+
+% set -f  # 禁止globbing
+
+
+
+```
 ### good practice
 [[lang.bash.good.practice]]
