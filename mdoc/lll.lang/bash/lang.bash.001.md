@@ -1,3 +1,4 @@
+
 ### help
 ```sh
 man
@@ -31,6 +32,14 @@ eval "$cmd"|grep "$proc"
 
 ```
 
+### null, zero
+```sh
+/dev/null
+
+- \0
+cat /dev/zero | od -abc -N 1
+
+```
 
 ### variable 
 [[lang.bash.variables]]
@@ -230,7 +239,6 @@ echo $((++i)) $i  # 7 7
 echo $((i+=2)) $i # 9 9
 
 ```
-
 
 ### exit
 ```sh
@@ -606,25 +614,41 @@ $(command)
 ### eval ; command exec sequence
 [[lang.bash.eval]]
 
-
 ### subshell ; code block
 ```sh
 
-# subshell在另外进程执行。不会影响当前目录和变量
+- subshell在另外进程执行。不会影响当前目录和变量
+- subshell用于设置一个“专用的环境”
+- subshell的退出值也不影响main shell
 tar -cf - . | (cd /tmp; tar -xpf -)
 tar cvfz - ryan-note | (cd ~ryan; tar xvfz -)
 
-# subshell接受IO重定向。subshell退出不影响当前shell
+- subshell接受IO重定向。subshell退出不影响当前shell
 echo "ryan" | (read name; echo hello ${name};exit)
 
-# 代码块还是在当前进程执行，会受到当前目录的影响和变量
-# 必须在newline, 分号，关键字之后
+- subshell中变量仅在子进程中可见, 作用范围是local
+- subshell中修改了main shell中的变量, 甚至全局变量，修改范围仅仅在subshell中。对于main shell, 变量的值不会变化
+echo $BASH_SUBSHELL
+
+
+- 并行运行subshell
+(cat list1 list2 list3 | sort | uniq > list123) &
+(cat list4 list5 list6 | sort | uniq > list456) &
+# Same effect as
+# cat list1 list2 list3 | sort | uniq > list123 &
+# cat list4 list5 list6 | sort | uniq > list456 &
+wait   # Don't execute the next command until subshells finish.
+	
+	diff list123 list456
+	
+- 代码块还是在当前进程执行，会受到当前目录的影响和变量
+- 必须在newline, 分号，关键字之后
 cd /tmp && {
   echo $PWD
   echo haha
 }
 
-# 代码块接受IO重定向
+- 代码块接受IO重定向
 echo "ryan" | {read name; echo hello ${name}!}
 
 
@@ -644,6 +668,9 @@ echo "ryan" | {read name; echo hello ${name}!}
 [1] 7695
 % wait 7695
 
+% cat list1 list2 list3|sort|uniq > list123 &
+% cat list4 list5 list6|sort|uniq > list456 &
+% wait # wait for all subshell
 
 ```
 
@@ -745,9 +772,68 @@ cd ~3
 -- join array
 array=(1 2 3)
 joined_str=$(IFS=, ; echo "${array[*]}")
+```
+
+### array
+```sh
+-- extended brace expansion
+chars=({A..Z} {a-z} {0..9})
+
+-- len of array
+echo ${#array[*]}
+echo ${#array[@]}
 
 ```
 
+### quote
+```sh
+% echo "$(ls -l)"         -- 输出两行
+% echo $(ls -l)           -- 输出一行
 
+-- 一般为变量加上双引号
+% echo "$var"
+
+
+-------------------------------------------------
+-- 双引号会禁止空格的分词功能
+list="one two three"
+for w in $list;do echo $w;done
+one
+two
+three
+for w in "$list";do echo $w;done
+one two three
+
+-------------------------------------------------
+variable1="a variable containing five words"
+COMMAND This is $variable1    # Executes COMMAND with 7 arguments:
+# "This" "is" "a" "variable" "containing" "five" "words"
+
+COMMAND "This is $variable1"  # Executes COMMAND with 1 argument:
+# "This is a variable containing five words"
+
+variable2=""    # Empty.
+
+COMMAND $variable2 $variable2 $variable2
+                # Executes COMMAND with no arguments. 
+COMMAND "$variable2" "$variable2" "$variable2"
+                # Executes COMMAND with 3 empty arguments. 
+COMMAND "$variable2 $variable2 $variable2"
+                # Executes COMMAND with 1 argument (2 spaces).
+
+
+----------------------------------------------------
+-- 双引号会禁止globbing
+
+% echo *          # 显示当前目录所有文件
+% echo "*"        # 输出 *
+% ls *
+% ls "*"          # 输出错误信息
+
+% set -f  # 禁止globbing
+
+
+
+```
 ### good practice
 [[lang.bash.good.practice]]
