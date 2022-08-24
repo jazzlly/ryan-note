@@ -140,6 +140,9 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 
 ###  sed
 ```
+# 替换最好使用逗号作为分隔符
+"s,xix,https://localhost:2103,g"
+
 # 匹配规则
 longest leftmost
 

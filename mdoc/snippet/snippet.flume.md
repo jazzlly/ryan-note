@@ -13,6 +13,9 @@ flume source:
 cd srv
 cd pekall-cmc-data-system/pekall-custom-flume-sink
 mvn clean install -Dmaven.test.skip=true && cp target/java-examples-0.0.1-SNAPSHOT-jar-with-dependencies.jar  ~/bin/apache-flume-1.9.0-bin/lib/
+
+mvn clean install -Dmaven.test.skip=true && scp target/java-examples-0.0.1-SNAPSHOT-jar-with-dependencies.jar emmjava@192.168.11.99:/home/emmjava/deploy_dir/app_services
+
  
 bin/flume-ng agent --name a1 -c conf -f conf/custom_sink.conf  -Dflume.root.logger=INFO,console
 
