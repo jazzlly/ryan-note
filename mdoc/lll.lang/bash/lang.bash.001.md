@@ -1,10 +1,9 @@
-
 ### help
-```sh
-man
 
-help test
-help read
+```bash
+man  # 外部命令
+
+help test  # buildin命令
 
 LC_ALL=C type read
 
@@ -14,16 +13,17 @@ LC_ALL=C type read
 
 ```
 
+
 ### debug
 ```sh
 
--- Prints shell input lines as they are read
+# Prints shell input lines as they are read
 set -v  == set -o verbose
 
--- print command traces before executing command
+# print command traces before executing command
 set -x == set -o xtrace
 
-set -xv
+set -eux
 cmd="ps aux"
 proc="ps aux"
 eval "$cmd"|grep "$proc"
@@ -36,7 +36,7 @@ eval "$cmd"|grep "$proc"
 ```sh
 /dev/null
 
-- \0
+# \0
 cat /dev/zero | od -abc -N 1
 
 ```
@@ -56,7 +56,6 @@ ls -l -l foo.c
 
 长选项前面添加两个减号
 patch --verbose --backup -p1 < /tmp/foo.patch
-
 
 ```
 
@@ -78,9 +77,9 @@ type type
 ```
 
 ### variable
-```bash
+```sh
 
-值中包含空格，使用引号
+# 值中包含空格，使用引号
 fullname='ryan jiang'
 info="$fullname haha!"
 	
@@ -99,15 +98,13 @@ ls -d /home/emmjava/$p/app_services/*/
 
 ```
 
-
-
 ### printf
 ```bash
-printf format-string [arguments ...]
+# printf format-string [arguments ...]
 % printf 'hello world %d %s hahaha\n' 123 foo
 
 # 宽度控制
-flags width.precision format-specifier
+# flags width.precision format-specifier
 % printf '|%20s|\n' hello  # hello在右边
 % printf '|%-20s|\n' hello # hello在左边
 ```
@@ -129,14 +126,7 @@ LC_TIME 日期与时间格式
 
 # 显示locale, locale C表示ASCII模式
 locale
-LANG=""
-LC_COLLATE="C"
-LC_CTYPE="UTF-8"
-LC_MESSAGES="C"
-LC_MONETARY="C"
-LC_NUMERIC="C"
-LC_TIME="C"
-LC_ALL=
+
 
 # 查询locale细节
 LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
@@ -148,9 +138,10 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 [[lang.bash.awk]]
 
 ###  sed
-```
-# 替换最好使用逗号作为分隔符
-"s,xix,https://localhost:2103,g"
+```sh
+# 对于替换命令，s后的第一个字符为分隔符
+# 好的实践: 替换命令最好使用逗号作为分隔符
+"s,xix,https://localhost:2103.*$,g"
 
 # 匹配规则
 longest leftmost
@@ -161,10 +152,11 @@ find ./mdoc -type d -print|sed 's;/mdoc;/mdoc.bak;'|sed 's/^/mkdir /'|bash -x
 # 一行中多个命令
 sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
 
+# 工作模式
+# 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印# # 到标准输出。再回到开头将下一行读入到模式空间
+
 ```
 
-工作模式
-每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印到标准输出。再回到开头将下一行读入到模式空间
 
 ###  cut
 ```
@@ -589,6 +581,34 @@ PID TTY           TIME CMD
 
 ```
 
+
+### brace expansion
+```sh
+
+%  echo \'{foo,bar}\'
+'foo' 'bar'
+
+% cat {a,b,c}.txt
+a.txt b.txt c.txt
+
+% cp file.{txt,txt.bk}
+
+% echo {a,b,c}{.txt,.exe}
+
+% echo {a..z}
+
+% echo {0..3}
+
+base64_charset=( {A..Z} {a..z} {0..9} + / = )
+
+# No spaces allowed within the braces _unless_ the spaces are quoted or escaped.
+% echo {file1,file2}\ :{\ A," B",' C'}
+
+file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C
+
+{a..z}
+
+```
 
 ### expansion,  tilde wildcard globbing 
 ```sh
