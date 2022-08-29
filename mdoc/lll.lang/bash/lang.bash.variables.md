@@ -62,6 +62,9 @@ $PS2 命令行从提示符
 $PS4 set -x时提示符
 
 $- shell打开的所有选项
+% echo $-
+himBHs  # interactive shell
+
 
 % echo $-
 569XZilms

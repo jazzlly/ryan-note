@@ -44,6 +44,10 @@ cat /dev/zero | od -abc -N 1
 ### variable 
 [[lang.bash.variables]]
 
+### parameter substitution
+[[lang.bash.parameter.substitution]]
+
+
 ### option vs argument
  
 ```shell
@@ -581,9 +585,10 @@ PID TTY           TIME CMD
 
 ```
 
-
 ### brace expansion
 ```sh
+% echo {,/usr}/bin
+/bin /usr/bin
 
 %  echo \'{foo,bar}\'
 'foo' 'bar'
@@ -631,6 +636,27 @@ file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C
 $(command)
 ```
 
+### code block
+```sh
+# code block不会创建一个子shell
+# ()会创建子shell
+
+a=123
+{ a=321; }   # anonymous function
+echo $a      # 321
+
+# code block with I/O redirection
+{
+read line1
+read line2
+} < /tmp/foo
+
+{
+echo "xixi"
+echo "haha"
+} >> /tmp/m.sh
+
+```
 ### eval ; command exec sequence
 [[lang.bash.eval]]
 
@@ -640,6 +666,9 @@ $(command)
 - subshell在另外进程执行。不会影响当前目录和变量
 - subshell用于设置一个“专用的环境”
 - subshell的退出值也不影响main shell
+
+(cd /source/directory && tar cf - . ) | (cd /dest/directory && tar xpvf -)
+
 tar -cf - . | (cd /tmp; tar -xpf -)
 tar cvfz - ryan-note | (cd ~ryan; tar xvfz -)
 
@@ -855,5 +884,37 @@ COMMAND "$variable2 $variable2 $variable2"
 
 
 ```
+
+### interactive
+```sh
+# interactive shell: 和tty绑定，允许用户输入，有提示符，允许job控制
+# non-interactive shell: 在脚本中运行的shell
+
+if [ -z "$PS1" ];then
+echo non interactive shell
+else
+echo interactive shell
+fi
+
+case $- in
+*i*)    # interactive shell
+;;
+*)      # non-interactive shell
+;;
+
+#    if [ -t 0 ] works ... when you're logged in locally
+#    but fails when you invoke the command remotely via ssh.
+#    So for a true test you also have to test for a socket.
+if [[ -t "$fd" || -p /dev/stdin ]]
+then
+  echo interactive
+else
+  echo non-interactive
+fi
+
+
+
+```
+
 ### good practice
 [[lang.bash.good.practice]]

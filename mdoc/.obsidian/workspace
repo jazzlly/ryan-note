@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "85f506b6f9b61289",
+    "id": "51c208f120333019",
     "type": "split",
     "children": [
       {
-        "id": "cb02ca942aab7286",
+        "id": "3bc2bb902acf29a7",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -19,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fe6e9f5677fdde9f",
+    "id": "f355cf6724d0415f",
     "type": "split",
     "children": [
       {
-        "id": "07d483548e6e5ada",
+        "id": "0dbbb5e3e822b7b2",
         "type": "tabs",
         "children": [
           {
-            "id": "5a9c6e2042319af0",
+            "id": "bdd40459d4d41d15",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -35,22 +35,22 @@
             }
           },
           {
-            "id": "dbc4d0a2890db805",
+            "id": "6d1562e6e46429f3",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           },
           {
-            "id": "f4878e7c6bbfa725",
+            "id": "3ad52738da1dbf3b",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -61,25 +61,25 @@
       }
     ],
     "direction": "horizontal",
-    "width": 240.00793838500977,
+    "width": 291.0129165649414,
     "collapsed": true
   },
   "right": {
-    "id": "56ba8494188d087b",
+    "id": "5dabb4d81f47b3bd",
     "type": "split",
     "children": [
       {
-        "id": "f3a8620561754eda",
+        "id": "55487db5e969b751",
         "type": "tabs",
         "children": [
           {
-            "id": "5d73b829471aa841",
+            "id": "89eb418bfe067b31",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
                 "file": "lll.lang/bash/lang.bash.001.md",
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -90,7 +90,15 @@
             }
           },
           {
-            "id": "1f869f19767c96b6",
+            "id": "febc5ef82320efa5",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "8a079766c79130f2",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -101,7 +109,7 @@
             }
           },
           {
-            "id": "0f7868eb62907f13",
+            "id": "a513c056a3c4bd2f",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -111,23 +119,32 @@
             }
           },
           {
-            "id": "5dcf24251f36331d",
+            "id": "9c9f5e6a0c6ef1df",
             "type": "leaf",
             "state": {
-              "type": "advanced-tables-toolbar",
+              "type": "side-panel-control-view",
               "state": {}
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 125.90369415283203
+    "width": 300,
+    "collapsed": true
   },
-  "active": "0f7868eb62907f13",
+  "active": "3bc2bb902acf29a7",
   "lastOpenFiles": [
+    "lll.lang/bash/lang.bash.variables.md",
     "lll.lang/bash/lang.bash.001.md",
-    "lll.lang/bash/lang.bash.trap.md"
+    "lll.lang/bash/lang.bash.parameter.substitution.md",
+    "xxx.tech/crypto/snippet.ssl https ssh.md",
+    "lll.lang/bash/lang.bash.eval.md",
+    "002.health/2022.01.09 badminton.md",
+    "lll.lang/bash/bash.hex.binary.tools.md",
+    "000.inbox/pekall info.md",
+    "100.kernel/linux.terminal.tty.pty.md",
+    "lll.lang/bash/lang.bash.awk.md"
   ]
 }
