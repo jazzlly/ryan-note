@@ -912,7 +912,34 @@ else
   echo non-interactive
 fi
 
+```
 
+### arithmetic expansion
+```sh
+REASONS=(
+'Working hard'
+'Gotta ship this feature'
+'Someone fucked the system again'
+)
+
+echo `expr $RANDOM % ${#REASONS[@]}`
+echo $(($RANDOM % ${#REASONS[@]}))
+
+```
+
+### random
+```sh
+REASONS=(
+'Working hard'
+'Gotta ship this feature'
+'Someone fucked the system again'
+)
+
+rand=$[ $RANDOM % ${#REASONS[@]} ]
+
+RANDOM_REASON=${REASONS[$rand]}
+
+MESSAGE="Late at work. "$RANDOM_REASON
 
 ```
 
