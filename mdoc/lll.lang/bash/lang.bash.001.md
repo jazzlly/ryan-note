@@ -433,6 +433,8 @@ PID TTY           TIME CMD
 % read user
 % cd ~${user}  # 进入user的家目录
 
+% ~+  # PWD展开
+
 ? 单个字符
 [a-z] 小写字母
 [!a-z] 非小写字母
@@ -447,6 +449,7 @@ $(command)
 ### eval ; command exec sequence
 ```sh
 执行顺序
+- 通过token分隔语句，token包括; | 等等。
 - 检查是否是复合语句，如果是，展开命令
 - 别名替换
 - 波浪号替换
@@ -461,10 +464,22 @@ $(command)
 eval可将脚本再按照循序执行一遍
 
 % lspage='ls | more'
-% $lspage # 错误
+
+# 变量展开后，没有执行最开始的token化(第一步)
+# 所以看到的是一整条命令ls | more
+% $lspage 
 % eval $lspage
 
 ```
 
+
+### subshell ; code block
+```sh
+
+# subshell在另外进程执行。不会影响当前目录
+tar -cf - . | (cd /tmp; tar -xpf -)
+
+
+```
 ### good practice
 [[lang.bash.good.practice]]
