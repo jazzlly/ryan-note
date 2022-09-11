@@ -1,21 +1,84 @@
-
+# quote
 ```sh
+y=`ls -l`
+echo $y    -- 换行被去掉了
+echo "$y"  -- 换行没有被去掉
+
+```
+
+# scope
+```sh
+
+export
+readonly
+local
+```
+
+### declare
+```sh
+
+declare # 输出所有的变量，局部变量，函数
+
+declare -r # readonly
+
+--- declare将变量scope限制在函数内部
+出了函数，该变量就被unset了
+
+```
+
+### readonly
+```sh
+readonly foo=bar
+
+readonly xixi=haha
+
+declare -p xixi
+declare -r xixi="haha"
+
+foo=xxx 
+-bash: foo: readonly variable
+
+unset foo
+-bash: unset: foo: cannot unset: readonly variable
+```
+
+### dollar sign
+```sh
+
+# 按照键盘顺序记忆
+
+$! 最后一个后台进程号, 可以wait
 
 $$ 当前进程号
 
 $? 命令结果
 
-${#var} 变量字符长度
-
 $0 程序名称，不包括任何参数
-
-$! 最后一个进程号, 可以wait
 
 $PPID 父进程编号
 
 $PS1 命令行主提示符
 $PS2 命令行从提示符
 $PS4 set -x时提示符
+
+$- shell打开的所有选项
+% echo $-
+himBHs  # interactive shell
+
+
+% echo $-
+569XZilms
+% set -x; echo $-
+569XZilmsx
+
+$(command)  执行命令
+${val}   变量展开
+${#var}  变量字符长度
+
+${string:position:len}  按照位置提取子串
+${string: (-4)} 从后面提取
+${string: -4:3}
+
 
 ```
 
@@ -87,7 +150,7 @@ done
 var=foo
 
 # 如果var不存在显示bar
-echo ${var:-bar} # var
+echo ${var:-bar} # foo
 echo ${varr:-bar} # bar
 
 # 如果位置参数1不存在, 则...
@@ -103,7 +166,8 @@ ${varr:?message}
 ${varr:?} # 默认输出 zsh: varr: parameter not set
 
 # var存在且非null, 返回word。否则返回null
-${var:+word}
+${var:+word}  # if var return word else return null
+
 ${count:+1}
 
 # :是可选的，测试存在，并非null
@@ -129,4 +193,23 @@ ${f#/*/}
 ${f##/*/}
 ${f%.*}
 ${f%%.**}
+
+# 替换第一个找到的substring
+${string/substring/replacement}
+
+# 替换所有的找到的substring
+${string/
+/substring/replacement}
+```
+
+### internal variables
+
+```sh
+export CDPATH=$CDPATH:/c/Users/think/git/pekall
+cd server
+
+# 下面两条命令等效
+cd -
+cd $OLDPWD
+
 ```

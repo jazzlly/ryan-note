@@ -1,5 +1,49 @@
 #!/usr/bin/env bash
 
+for i in `seq 1 $#`
+do
+  echo \$$i
+  eval echo \$$i 
+done
+
+exit
+
+output_args() {
+  for arg
+  do
+    echo "[$arg]"
+  done
+}
+
+IFS=:
+var=':a::b:::c::::'
+output_args $var
+
+exit
+
+xyz() {
+  echo func name: $FUNCNAME
+}
+
+xyz
+
+exit 0
+
+set -e
+set -o pipefail
+ls -l ./xfoo.sh|cat|wc -l
+
+
+echo done
+exit
+envvar=$1
+
+dirpath=`eval echo '${'$1'}'`
+
+echo $dirpath
+
+
+exit
 # set -ex
 i=5
 cat<<'E'OF

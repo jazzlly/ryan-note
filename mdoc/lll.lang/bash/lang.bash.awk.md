@@ -1,3 +1,5 @@
+### todo: shell脚本学习指南 awk章节
+
 ### gramma
 
 ```sh
@@ -54,4 +56,11 @@ END { clean code}
 
 awk 'BEGIN {FS=":"; OFS=";"} {print $1, $5}' /etc/passwd
 
+```
+
+
+### progress
+```sh
+find . -type f | \
+awk 'BEGIN {T=0} (T!=systime()) { printf "%s %s\n",NR,$0 ; T=systime()} END { print NR}'
 ```

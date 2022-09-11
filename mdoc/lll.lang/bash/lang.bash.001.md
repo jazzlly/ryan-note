@@ -1,6 +1,52 @@
+### help
+
+```bash
+man  # 外部命令
+
+help test  # buildin命令
+
+LC_ALL=C type read
+
+获取posix标注配置
+% getconf -a
+% getconf ARG_MAX
+
+```
+
+
+### debug
+```sh
+
+# Prints shell input lines as they are read
+set -v  == set -o verbose
+
+# print command traces before executing command
+set -x == set -o xtrace
+
+set -eux
+cmd="ps aux"
+proc="ps aux"
+eval "$cmd"|grep "$proc"
+
+#!/usr/bin/env bash -xv
+
+```
+
+### null, zero
+```sh
+/dev/null
+
+# \0
+cat /dev/zero | od -abc -N 1
+
+```
 
 ### variable 
 [[lang.bash.variables]]
+
+### parameter substitution
+[[lang.bash.parameter.substitution]]
+
 
 ### option vs argument
  
@@ -14,7 +60,6 @@ ls -l -l foo.c
 
 长选项前面添加两个减号
 patch --verbose --backup -p1 < /tmp/foo.patch
-
 
 ```
 
@@ -36,21 +81,34 @@ type type
 ```
 
 ### variable
-```bash
+```sh
 
-值中包含空格，使用引号
+# 值中包含空格，使用引号
 fullname='ryan jiang'
 info="$fullname haha!"
 	
 ```
 
+### ls
+```sh
+# 查看所有目录
+ls -d */
+ls -d /home/emmjava/$p/app_services/*/
+
+-1 : -one 强制单栏输出
+-R : 递归显示目录，文件
+-S : 按照大到小顺序排列
+-t : 按照最后修改时间排序
+
+```
+
 ### printf
 ```bash
-printf format-string [arguments ...]
+# printf format-string [arguments ...]
 % printf 'hello world %d %s hahaha\n' 123 foo
 
 # 宽度控制
-flags width.precision format-specifier
+# flags width.precision format-specifier
 % printf '|%20s|\n' hello  # hello在右边
 % printf '|%-20s|\n' hello # hello在左边
 ```
@@ -72,14 +130,7 @@ LC_TIME 日期与时间格式
 
 # 显示locale, locale C表示ASCII模式
 locale
-LANG=""
-LC_COLLATE="C"
-LC_CTYPE="UTF-8"
-LC_MESSAGES="C"
-LC_MONETARY="C"
-LC_NUMERIC="C"
-LC_TIME="C"
-LC_ALL=
+
 
 # 查询locale细节
 LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
@@ -91,7 +142,11 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 [[lang.bash.awk]]
 
 ###  sed
-```
+```sh
+# 对于替换命令，s后的第一个字符为分隔符
+# 好的实践: 替换命令最好使用逗号作为分隔符
+"s,xix,https://localhost:2103.*$,g"
+
 # 匹配规则
 longest leftmost
 
@@ -101,10 +156,11 @@ find ./mdoc -type d -print|sed 's;/mdoc;/mdoc.bak;'|sed 's/^/mkdir /'|bash -x
 # 一行中多个命令
 sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
 
+# 工作模式
+# 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印# # 到标准输出。再回到开头将下一行读入到模式空间
+
 ```
 
-工作模式
-每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印到标准输出。再回到开头将下一行读入到模式空间
 
 ###  cut
 ```
@@ -179,7 +235,6 @@ echo $((++i)) $i  # 7 7
 echo $((i+=2)) $i # 9 9
 
 ```
-
 
 ### exit
 ```sh
@@ -366,7 +421,113 @@ do
 done | less
 ```
 
+### pipe
+```sh
+管道命令在自己的子shell进程中执行
+
+将command1的标准输出作为command2的标准输入
+% commad1 | command2
+
+cmd1的标准输出，标准错误作为cmd2的标准输入
+% cmd1 2>&1 | cmd2
+
+2>&1 | 的简写
+% cmd1 |& cmd2
+
+查看pipe每条命令的执行结果
+% echo ${PIPESTATUS[@]}
+
+------------------------------------
+broken pipe: 返回值141
+$ seq 1 10000 | head -1
+1
+
+$ echo ${PIPESTATUS[@]}
+141 0
+-----------------------------------
+grep -q 第一次匹配成功后，就会会立即退出。netstat还是会继续向pipe中输出信息，这样就会导致netstat收到broken pipe的signal, 最后netstat返回141
+
+if netstat -anp|grep -q '9210.*LISTEN.*java';then
+  echo ${PIPESTATUS[@]} # 141 0
+  return 0
+else
+  return 1
+fi
+
+好的方式是
+
+if netstat -anp|grep '9210.*LISTEN.*java' > /dev/null 2>&1;then
+  echo ${PIPESTATUS[@]} # 141 0
+  return 0
+else
+  return 1
+fi
+
+process substitution
+% grep -q '9210.*LISTEN.*java' <(netstat -anp)
+```
+
+### process substitution
+```sh
+
+https://tldp.org/LDP/abs/html/process-sub.html
+可以将进程的输入和输出变成一个文件名
+<(command) # command的输出变成了一个文件 /dev/fd/63
+>(command) # command的输入变成了一个文件
+
+% echo >(true)
+% touch /tmp/foo; echo /tmp/foo;  true < /tmp/foo; rm /tmp/foo
+
+% echo <(true)
+% touch /tmp/foo; true > /tmp/foo; echo /tmp/foo;rm /tmp/foo
+
+[root@uas ~]# ls
+test_all.sh  tmp_poca.sh  two_node_rel_p2.sh
+echo后面如果是文件名，就会输出文件名
+[root@uas ~]# echo ./tmp_poca.sh
+./tmp_poca.sh
+[root@uas ~]# echo <(date)
+/dev/fd/63
+
+
+[root@uas ~]# wc <(cat /usr/share/dict/linux.words)
+ 479828  479828 4953680 /dev/fd/63
+[root@uas ~]# wc /usr/share/dict/linux.words
+ 479828  479828 4953680 /usr/share/dict/linux.words
+
+使用两条命令作为输入
+comm <(ls -l) <(ls -al)
+
+diff <(ls $first_directory) <(ls $second_directory)
+
+sort -k 9 <(ls -l /bin) <(ls -l /usr/bin) <(ls -l /usr/X11R6/bin)
+
+
+# Calculate 2+ checksums while also writing the file
+wget -O - http://example.com/dvd.iso | tee >(sha1sum > dvd.sha1) >(md5sum > dvd.md5) > dvd.iso
+
+# Accept input from two 'sort' processes at the same time
+comm -12 <(sort file1) <(sort file2)
+
+read -a list < <( od -d -w24 /dev/urandom )
+
+curl -i -v -s -X POST -b ./cookie.txt -H 'Content-Type:application/json' \
+http://uas.pekall.com:9200/uni_auth/v1/enterprise_users \
+    --data @<(cat<<EOF
+    {
+      "name": "test",
+      "orgCode": "${orgcode}",
+      ...
+      "division": 110100
+    }
+EOF   # 顶头写，不能有空格
+    )'
+
+
+
+```
 ### here document
+[[lang.bash.heredoc]]
 ```sh
 
 # 将EOF引用后，就不会替换here document中的变量
@@ -406,8 +567,8 @@ exec 2>/tmp/$$.log
 
 ```
 
-
 ### terminal
+
 ```sh
 
 # 重定向标准错误, 在osx有效，linux中无效
@@ -424,6 +585,35 @@ PID TTY           TIME CMD
 
 ```
 
+### brace expansion
+```sh
+% echo {,/usr}/bin
+/bin /usr/bin
+
+%  echo \'{foo,bar}\'
+'foo' 'bar'
+
+% cat {a,b,c}.txt
+a.txt b.txt c.txt
+
+% cp file.{txt,txt.bk}
+
+% echo {a,b,c}{.txt,.exe}
+
+% echo {a..z}
+
+% echo {0..3}
+
+base64_charset=( {A..Z} {a..z} {0..9} + / = )
+
+# No spaces allowed within the braces _unless_ the spaces are quoted or escaped.
+% echo {file1,file2}\ :{\ A," B",' C'}
+
+file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C
+
+{a..z}
+
+```
 
 ### expansion,  tilde wildcard globbing 
 ```sh
@@ -446,7 +636,205 @@ PID TTY           TIME CMD
 $(command)
 ```
 
+### code block
+```sh
+# code block不会创建一个子shell
+# ()会创建子shell
+
+a=123
+{ a=321; }   # anonymous function
+echo $a      # 321
+
+# code block with I/O redirection
+{
+read line1
+read line2
+} < /tmp/foo
+
+{
+echo "xixi"
+echo "haha"
+} >> /tmp/m.sh
+
+```
 ### eval ; command exec sequence
+[[lang.bash.eval]]
+
+### subshell ; code block
+```sh
+
+- subshell在另外进程执行。不会影响当前目录和变量
+- subshell用于设置一个“专用的环境”
+- subshell的退出值也不影响main shell
+
+(cd /source/directory && tar cf - . ) | (cd /dest/directory && tar xpvf -)
+
+tar -cf - . | (cd /tmp; tar -xpf -)
+tar cvfz - ryan-note | (cd ~ryan; tar xvfz -)
+
+- subshell接受IO重定向。subshell退出不影响当前shell
+echo "ryan" | (read name; echo hello ${name};exit)
+
+- subshell中变量仅在子进程中可见, 作用范围是local
+- subshell中修改了main shell中的变量, 甚至全局变量，修改范围仅仅在subshell中。对于main shell, 变量的值不会变化
+echo $BASH_SUBSHELL
+
+
+- 并行运行subshell
+(cat list1 list2 list3 | sort | uniq > list123) &
+(cat list4 list5 list6 | sort | uniq > list456) &
+# Same effect as
+# cat list1 list2 list3 | sort | uniq > list123 &
+# cat list4 list5 list6 | sort | uniq > list456 &
+wait   # Don't execute the next command until subshells finish.
+	
+	diff list123 list456
+	
+- 代码块还是在当前进程执行，会受到当前目录的影响和变量
+- 必须在newline, 分号，关键字之后
+cd /tmp && {
+  echo $PWD
+  echo haha
+}
+
+- 代码块接受IO重定向
+echo "ryan" | {read name; echo hello ${name}!}
+
+
+```
+
+### command sequence
+```sh
+1. 特殊build-in命令
+2. shell函数
+3. 一般build-in命令
+4. $PATH中包括的命令
+```
+
+### wait
+```sh
+% sleep 60&
+[1] 7695
+% wait 7695
+
+% cat list1 list2 list3|sort|uniq > list123 &
+% cat list4 list5 list6|sort|uniq > list456 &
+% wait # wait for all subshell
+
+```
+
+### set
+```sh
+
+% set   # 显示所有变量的值
+
+--------
+设置位置参数
+
+set -- arg1 arg2 arg3
+echo $2 # arg2
+
+
+```
+
+### basename
+```sh
+提取路径中的文件名
+
+% basename /Users/jiangrui/git/ryan/ryan-note/README.md
+README.md
+
+% basename /Users/jiangrui/git/ryan/ryan-note/README.md .md
+README
+
+% dirname /Users/jiangrui/git/ryan/ryan-note/README.md
+/Users/jiangrui/git/ryan/ryan-note
+
+```
+
+### file
+```sh
+# 查找top 10空间占用目录
+% du -s -k /home/emmjava/* | sort -k1nr|head -n 10
+
+
+```
+
+### random
+```sh
+% /dev/random 提供高质量的随机数， 会block
+% /dev/urandom 随机程度不高，不会block
+
+```
+
+### trap
+[[lang.bash.trap]]
+
+### process
+```sh
+------------------------
+好用的系统命令
+w, 
+iostat, netstat, nfsstat, sar, uptime, vmstat, w, xcpustat, xload, xperfmon
+
+ps aux
+ps axjf
+
+```
+
+### top: feEm
+常用命令行选项
+f: field 管理, 上下键选择列，s设置排序，d设置是否显示
+m: 切换头部内存显示模式，数字，百分比进度条
+e: 切换详细数据中内存列的单位
+E: 切换内存显示单位, MB, GB, ...
+z: 切换彩色显示
+b: 切换高亮显示
+
+W: 将当前的命令键盘命令保存到配置文件中，下次启动自动开启
+
+### find
+
+### dir stack ; pushd popd dirs
+https://www.jianshu.com/p/53cccae3c443
+```sh
+
+export dirstack=(
+/e/git/jiangrui/ryan-note
+/e/BaiduNetdiskWorkspace
+/c/Users/think/git/pekall/deps/new_police_deploy
+/c/Users/think/git/pekall/server
+)
+for dir in "${dirstack[@]}"; do
+    pushd -n "$dir" >/dev/null
+done
+unset dirstack
+
+直接进入stack中的目录
+cd ~2
+cd ~3
+
+```
+
+### IFS ; join
+```sh
+-- join array
+array=(1 2 3)
+joined_str=$(IFS=, ; echo "${array[*]}")
+```
+
+### array
+```sh
+-- extended brace expansion
+chars=({A..Z} {a-z} {0..9})
+
+-- len of array
+echo ${#array[*]}
+echo ${#array[@]}
+
+```
+
+### quote
 ```sh
 执行顺序
 - 通过token分隔语句，token包括; | 等等。
@@ -469,6 +857,111 @@ eval可将脚本再按照循序执行一遍
 # 所以看到的是一整条命令ls | more
 % $lspage 
 % eval $lspage
+=======
+% echo "$(ls -l)"         -- 输出两行
+% echo $(ls -l)           -- 输出一行
+
+-- 一般为变量加上双引号
+% echo "$var"
+
+
+-------------------------------------------------
+-- 双引号会禁止空格的分词功能
+list="one two three"
+for w in $list;do echo $w;done
+one
+two
+three
+for w in "$list";do echo $w;done
+one two three
+
+-------------------------------------------------
+variable1="a variable containing five words"
+COMMAND This is $variable1    # Executes COMMAND with 7 arguments:
+# "This" "is" "a" "variable" "containing" "five" "words"
+
+COMMAND "This is $variable1"  # Executes COMMAND with 1 argument:
+# "This is a variable containing five words"
+
+variable2=""    # Empty.
+
+COMMAND $variable2 $variable2 $variable2
+                # Executes COMMAND with no arguments. 
+COMMAND "$variable2" "$variable2" "$variable2"
+                # Executes COMMAND with 3 empty arguments. 
+COMMAND "$variable2 $variable2 $variable2"
+                # Executes COMMAND with 1 argument (2 spaces).
+
+
+----------------------------------------------------
+-- 双引号会禁止globbing
+
+% echo *          # 显示当前目录所有文件
+% echo "*"        # 输出 *
+% ls *
+% ls "*"          # 输出错误信息
+
+% set -f  # 禁止globbing
+
+
+
+```
+
+### interactive
+```sh
+# interactive shell: 和tty绑定，允许用户输入，有提示符，允许job控制
+# non-interactive shell: 在脚本中运行的shell
+
+if [ -z "$PS1" ];then
+echo non interactive shell
+else
+echo interactive shell
+fi
+
+case $- in
+*i*)    # interactive shell
+;;
+*)      # non-interactive shell
+;;
+
+#    if [ -t 0 ] works ... when you're logged in locally
+#    but fails when you invoke the command remotely via ssh.
+#    So for a true test you also have to test for a socket.
+if [[ -t "$fd" || -p /dev/stdin ]]
+then
+  echo interactive
+else
+  echo non-interactive
+fi
+
+```
+
+### arithmetic expansion
+```sh
+REASONS=(
+'Working hard'
+'Gotta ship this feature'
+'Someone fucked the system again'
+)
+
+echo `expr $RANDOM % ${#REASONS[@]}`
+echo $(($RANDOM % ${#REASONS[@]}))
+
+```
+
+### random
+```sh
+REASONS=(
+'Working hard'
+'Gotta ship this feature'
+'Someone fucked the system again'
+)
+
+rand=$[ $RANDOM % ${#REASONS[@]} ]
+
+RANDOM_REASON=${REASONS[$rand]}
+
+MESSAGE="Late at work. "$RANDOM_REASON
 
 ```
 

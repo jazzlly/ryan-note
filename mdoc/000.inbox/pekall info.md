@@ -1,3 +1,8 @@
+### vpn
+1.202.74.178
+
+### cu225 guganyun
+ emmjava / Wocloud.cn@234
 
 ### cu225 9.11 test
 平台门户：                 https://bj.police.everknow.cn:4442  
@@ -28,3 +33,53 @@ jianyong.tian@pekall.com / pekall6284
 
 ### 铁路公安信息 railway
 - http://192.168.11.34/index.php?m=doc&f=view&docID=1376
+
+### 云南集中管控 yunnan cmc
+ssh -p 8022 root@20.30.2.11
+
+10.166.2.27   ssh：8022     root/hzih2018root 
+https://10.166.2.27:4434   uasadmin / pekall12#$
+https://10.166.2.27:44135  test / 123qwe!@#
+
+### 甘肃 gansu
+甘肃二区热点
+ssh  root@20.115.11.152  -p 20029
+1.连接上热点，可以直接ssh登陆二区服务器；
+
+二区
+zabbix_proxy 20.30.4.251
+2. ssh  20.30.2.11  8022  可以登陆上三类服务器95.1.12.240，可以跳转其他三区服务器；
+3. 服务器密码：root  /  pekall12#$
+三区服务器
+uas              95.1.12.240
+mdm            95.1.12.241
+unilog           95.1.12.242
+集中管控      95.1.12.243
+安全管控      95.1.12.244  
+
+# 甘肃三区
+ssh -p 8022 root@20.30.2.11
+登录uas之后
+95.1.12.241       mdm，
+95.1.12.243      集中管控
+甘肃web: 
+[https://20.30.2.11:4432](https://20.30.2.11:4432/)
+[https://20.30.2.11:44135](https://20.30.2.11:44135/)
+
+###  neimeng 内蒙三区mdm
+
+ssh root@20.30.2.11 -p 8022
+ssh 26.3.15.99 -p 20029
+
+### gab 公安部部平台mdm
+ssh root@20.30.2.11 -p 8022
+# 进入JJJ
+ssh 10.2.120.157 -p 8022
+
+# 进公安部uas
+
+ssh 10.2.120.214 -p 10003
+
+# 进公安部mdm
+
+ssh 192.168.100.98
