@@ -1,5 +1,6 @@
 ### help
 
+
 ```bash
 man  # 外部命令
 
@@ -12,7 +13,6 @@ LC_ALL=C type read
 % getconf ARG_MAX
 
 ```
-
 
 ### debug
 ```sh
@@ -51,7 +51,7 @@ cat /dev/zero | od -abc -N 1
 ### option vs argument
  
 ```shell
--o 是option。 foo, foo.c是参数
+-o 是option。 foo, foo.c是argument
 cc -o foo foo.c  
 
 没有参数的option可以合并。下面两条命令等效
@@ -75,6 +75,7 @@ type type
 2. Shell函数
 
 3. 外部命令。即为外部脚本, 会在新fork的进程中执行
+4. 
 ```
 父shell fork出子shell进程, 在子shell中执行新的程序
 父shell等待子shell进程结束
@@ -157,10 +158,10 @@ find ./mdoc -type d -print|sed 's;/mdoc;/mdoc.bak;'|sed 's/^/mkdir /'|bash -x
 sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
 
 # 工作模式
-# 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印# # 到标准输出。再回到开头将下一行读入到模式空间
+# 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印
+# 到标准输出。再回到开头将下一行读入到模式空间
 
 ```
-
 
 ###  cut
 ```
@@ -202,14 +203,12 @@ grep -v '^#' /etc/passwd|sort -n -t : -k 3nr,3
 cat /usr/share/dict/words|fmt -w 100
 ```
 
-
 ### strings
 ```sh
 # 查看二进制文件的文本信息
 
 strings kaf-logs/kafka-logs/police_sync_org-0/00000000000000000000.log
 ```
-
 
 ### env
 ```sh
@@ -818,7 +817,7 @@ cd ~3
 
 ### IFS ; join
 ```sh
--- join array
+# join array
 array=(1 2 3)
 joined_str=$(IFS=, ; echo "${array[*]}")
 ```
@@ -836,6 +835,28 @@ echo ${#array[@]}
 
 ### quote
 ```sh
+执行顺序
+- 通过token分隔语句，token包括; | 等等。
+- 检查是否是复合语句，如果是，展开命令
+- 别名替换
+- 波浪号替换
+- 变量替换
+- 命令替换
+- 算术表达式替换
+- 从变量，命令，算术替换中获取结果，使用IFS进行分隔
+- 通配符展开，?*[] 文件名生成
+- 使用第一个单词作为第一个命令，查找path中第一个文件
+- 完成IO重定向，执行命令
+
+eval可将脚本再按照循序执行一遍
+
+% lspage='ls | more'
+
+# 变量展开后，没有执行最开始的token化(第一步)
+# 所以看到的是一整条命令ls | more
+% $lspage 
+% eval $lspage
+=======
 % echo "$(ls -l)"         -- 输出两行
 % echo $(ls -l)           -- 输出一行
 
@@ -943,5 +964,14 @@ MESSAGE="Late at work. "$RANDOM_REASON
 
 ```
 
+
+### subshell ; code block
+```sh
+
+# subshell在另外进程执行。不会影响当前目录
+tar -cf - . | (cd /tmp; tar -xpf -)
+
+
+```
 ### good practice
 [[lang.bash.good.practice]]

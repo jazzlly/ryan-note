@@ -212,4 +212,12 @@ cd server
 cd -
 cd $OLDPWD
 
+
+# zsh中的cdpath
+setop auto_cd
+cdpath=(
+$HOME/git/pekall/server
+$HOME/git/ryan
+)
+
 ```

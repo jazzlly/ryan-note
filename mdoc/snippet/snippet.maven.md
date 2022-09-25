@@ -1,3 +1,9 @@
+### mvn test
+```sh
+
+mvn clean test -Dtest=TestClass#testFunc
+```
+
 ### dependency error
 ```sh
 检查dependency错误
@@ -11,3 +17,4 @@
 mvn -Dmaven.wagon.http.ssl.insecure=true  -Dmaven.wagon.http.ssl.allowall=true install
 
 ```
+
