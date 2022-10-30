@@ -2,7 +2,9 @@
 
 
 ```bash
-man  # 外部命令
+man bash
+
+man cmd # cmd是外部命令
 
 help test  # buildin命令
 
@@ -387,6 +389,21 @@ else
 fi
 ```
 
+### redirect variable to stdin of the command
+```sh
+foo='hello hexdump'
+foohex=$(xxd -p -u <<< "$foo")
+
+
+LINE="7.6.5.4"
+IFS=. read -a ARRAY <<< "$LINE"
+echo "$IFS"
+echo "${ARRAY[@]}"
+
+
+
+```
+
 ### read, io redirection, pipe
 ```sh
 
@@ -526,7 +543,7 @@ EOF   # 顶头写，不能有空格
 
 ```
 ### here document
-[[lang.bash.heredoc]]
+[[lang.bash.here.doc.string]]
 ```sh
 
 # 将EOF引用后，就不会替换here document中的变量
