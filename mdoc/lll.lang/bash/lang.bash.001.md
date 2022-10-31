@@ -2,7 +2,9 @@
 
 
 ```bash
-man  # 外部命令
+man bash
+
+man cmd # cmd是外部命令
 
 help test  # buildin命令
 
@@ -143,25 +145,7 @@ LC_ALL=zh_CN.UTF-8 locale -ck LC_TIME
 [[lang.bash.awk]]
 
 ###  sed
-```sh
-# 对于替换命令，s后的第一个字符为分隔符
-# 好的实践: 替换命令最好使用逗号作为分隔符
-"s,xix,https://localhost:2103.*$,g"
-
-# 匹配规则
-longest leftmost
-
-# 创建./mdoc目录的备份目录
-find ./mdoc -type d -print|sed 's;/mdoc;/mdoc.bak;'|sed 's/^/mkdir /'|bash -x
-
-# 一行中多个命令
-sed -i 's/foo/fuu/g; s/bar/baa/g' foo.txt
-
-# 工作模式
-# 每次读入一行，存在在模式空间中。然后对模式空间应用所有编辑命令。接着将模式空间内容打印
-# 到标准输出。再回到开头将下一行读入到模式空间
-
-```
+[[snippet.sed]]
 
 ###  cut
 ```
@@ -319,7 +303,7 @@ esac
 
 ```
 
-### while
+### while && getopts
 ```sh
 
 # 初始化变量
@@ -371,7 +355,7 @@ shift $((OPTIND-1)) # 删除选项，留下参数
 ### function
 ```sh
 
-# return和exit的行为一直
+# return和exit的行为一致
 equal() {
   if [ "$1" = "$2" ];then
     return 0
@@ -385,6 +369,18 @@ if equal 1 2 ;then
 else
   echo xixi
 fi
+```
+
+### redirect variable to stdin of the command && split
+```sh
+foo='hello hexdump'
+foohex=$(xxd -p -u <<< "$foo")
+
+LINE="7.6.5.4"
+IFS=. read -a ARRAY <<< "$LINE"
+echo "$IFS"
+echo "${ARRAY[@]}"
+
 ```
 
 ### read, io redirection, pipe
@@ -526,7 +522,7 @@ EOF   # 顶头写，不能有空格
 
 ```
 ### here document
-[[lang.bash.heredoc]]
+[[lang.bash.here.doc.string]]
 ```sh
 
 # 将EOF引用后，就不会替换here document中的变量

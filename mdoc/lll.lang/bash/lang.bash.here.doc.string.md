@@ -1,6 +1,8 @@
-
 ### here doc
 ```sh
+
+man bash
+and search here document
 
 # here document
 # Redirect input to an interactive shell script or program
@@ -39,3 +41,27 @@ blabla ...
 EOF
     )
 ```
+
+### here strings
+```sh
+
+man bash
+search here strings
+
+# 等效于
+echo "String" | command
+
+# redirect a variabe to stdin of a command
+LINE="7.6.5.4"
+IFS=. read -a ARRAY <<< "$LINE"
+echo "$IFS"
+echo "${ARRAY[@]}"
+
+注意，上面IFS仅仅在read那一行生效
+
+while read -r line; do
+    echo "... $line ..."
+done <<< "$array"
+
+```
+
