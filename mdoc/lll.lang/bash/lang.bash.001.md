@@ -303,7 +303,7 @@ esac
 
 ```
 
-### while
+### while && getopts
 ```sh
 
 # 初始化变量
@@ -355,7 +355,7 @@ shift $((OPTIND-1)) # 删除选项，留下参数
 ### function
 ```sh
 
-# return和exit的行为一直
+# return和exit的行为一致
 equal() {
   if [ "$1" = "$2" ];then
     return 0
@@ -371,18 +371,15 @@ else
 fi
 ```
 
-### redirect variable to stdin of the command
+### redirect variable to stdin of the command && split
 ```sh
 foo='hello hexdump'
 foohex=$(xxd -p -u <<< "$foo")
-
 
 LINE="7.6.5.4"
 IFS=. read -a ARRAY <<< "$LINE"
 echo "$IFS"
 echo "${ARRAY[@]}"
-
-
 
 ```
 
