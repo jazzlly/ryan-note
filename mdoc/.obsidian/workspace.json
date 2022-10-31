@@ -23,9 +23,11 @@
             "id": "28a326117842d553",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.0.3"
+                "file": "lll.lang/bash/lang.bash.001.md",
+                "mode": "source",
+                "source": true
               }
             }
           }
@@ -96,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lll.lang/bash/bash.hex.binary.tools.xxd.md",
+                "file": "lll.lang/bash/lang.bash.001.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,22 +126,23 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lll.lang/bash/bash.hex.binary.tools.xxd.md"
+                "file": "lll.lang/bash/lang.bash.001.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "28a326117842d553",
   "lastOpenFiles": [
-    "lll.lang/bash/lang.bash.here.doc.string.md",
-    "lll.lang/bash/lang.bash.001.md",
+    "snippet/bash/snippet.sed.md",
     "lll.lang/bash/bash.hex.binary.tools.xxd.md",
+    "lll.lang/bash/lang.bash.001.md",
+    "lll.lang/bash/lang.bash.here.doc.string.md",
     "lll.lang/bash/bash.hex.endianness.md"
   ]
 }
