@@ -1,3 +1,12 @@
+### mvn下载源代码
+```sh
+
+mvn dependency:resolve -Dclassifier=sources
+
+mvn dependency:sources
+
+```
+
 ### mvn test
 ```sh
 
